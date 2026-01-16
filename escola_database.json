@@ -1,0 +1,4266 @@
+{
+  "professores": [
+    {
+      "nome": "Heliana",
+      "disciplinas": [
+        "Português A",
+        "Português B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "16303d84-ed3e-42f7-bf3b-2f9edad87790"
+    },
+    {
+      "nome": "Deise",
+      "disciplinas": [
+        "Português A",
+        "Português B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "9552ce38-3389-49ae-b8e1-2ca76c7dc6d4"
+    },
+    {
+      "nome": "Loide",
+      "disciplinas": [
+        "Português A",
+        "Português B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "5f963a02-0ac4-4f66-b156-59fb10ac2ba9"
+    },
+    {
+      "nome": "Tatiane",
+      "disciplinas": [
+        "Matemática",
+        "Matemática",
+        "Matemática",
+        "Matemática"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "5c797429-d7a3-422f-ae5c-563a0360ec9a"
+    },
+    {
+      "nome": "Ricardo",
+      "disciplinas": [
+        "Matemática",
+        "Matemática",
+        "Matemática",
+        "Matemática"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "b487a2ba-f499-4f8d-9710-948dbc9a9ea1"
+    },
+    {
+      "nome": "Laís",
+      "disciplinas": [
+        "História A",
+        "História B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "761c1c82-cc2f-4b18-b3ac-caf340123ac3"
+    },
+    {
+      "nome": "Waldemar",
+      "disciplinas": [
+        "História A",
+        "História B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "75e23c3f-d4fb-4a15-8e3b-c1821cfd43a5"
+    },
+    {
+      "nome": "Rene",
+      "disciplinas": [
+        "Geografia A",
+        "Geografia B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "76f97f23-b47d-4de9-977f-383a820aa40e"
+    },
+    {
+      "nome": "Vladmir",
+      "disciplinas": [
+        "Química A",
+        "Química B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "a1fde6d8-cada-48aa-865c-9387410a18c7"
+    },
+    {
+      "nome": "Zabuor",
+      "disciplinas": [
+        "Química A",
+        "Química B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "e11aac92-9293-4ecd-856d-6cd3dde3ecf8"
+    },
+    {
+      "nome": "Gisele",
+      "disciplinas": [
+        "Geografia A",
+        "Geografia B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "a2ad8b3d-b4c5-4b81-b785-0d866a7596cf"
+    },
+    {
+      "nome": "Marina",
+      "disciplinas": [
+        "Biologia A",
+        "Biologia B",
+        "Ciências A",
+        "Ciências B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "9b578f7e-5709-440b-97b6-8930493e5237"
+    },
+    {
+      "nome": "Tatiane II",
+      "disciplinas": [
+        "Matemática",
+        "Matemática",
+        "Matemática",
+        "Matemática"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "8239e11f-8334-4946-aa36-a571fa5ef344"
+    },
+    {
+      "nome": "Santiago",
+      "disciplinas": [
+        "Matemática",
+        "Matemática",
+        "Matemática",
+        "Matemática"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "b1ff0b0a-fea4-44f7-bd6b-1dcd170d8c69"
+    },
+    {
+      "nome": "Andréia Lucia",
+      "disciplinas": [
+        "Matemática",
+        "Matemática",
+        "Matemática",
+        "Matemática"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "650cb21c-8483-4372-8cc4-a85a67a07082"
+    },
+    {
+      "nome": "César",
+      "disciplinas": [
+        "Informática A",
+        "Informática B",
+        "Física A",
+        "Física B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "36dd8a4b-695c-47df-9821-87ad959c2341"
+    },
+    {
+      "nome": "Anna Maria",
+      "disciplinas": [
+        "Filosofia A",
+        "Filosofia B",
+        "Sociologia A",
+        "Sociologia B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "8532cfb5-4fcc-4643-b702-51a5a2b90dbe"
+    },
+    {
+      "nome": "Marcão",
+      "disciplinas": [
+        "Educação Física A",
+        "Educação Física B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "7cdbc934-c0de-4ddf-a5b1-5aa6f2f78321"
+    },
+    {
+      "nome": "Andréia",
+      "disciplinas": [
+        "Educação Física A",
+        "Educação Física B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "a8bdc05c-ceec-48b8-bfe3-c8dcded17930"
+    },
+    {
+      "nome": "Vanessa",
+      "disciplinas": [
+        "Arte A",
+        "Arte B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "1c210d81-c151-4bae-ac88-9b6c1a65c509"
+    },
+    {
+      "nome": "Maria Luiza",
+      "disciplinas": [
+        "Inglês A",
+        "Inglês B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "32f01722-edab-4466-9e56-7f38848ea1db"
+    },
+    {
+      "nome": "Andréia Barreto",
+      "disciplinas": [
+        "Dinâmica A",
+        "Dinâmica B",
+        "Vida Pratica A",
+        "Vida Pratica B"
+      ],
+      "disponibilidade": [
+        "terca",
+        "segunda",
+        "sexta",
+        "quinta",
+        "quarta"
+      ],
+      "grupo": "AMBOS",
+      "horarios_indisponiveis": [],
+      "id": "d23214ab-b5ed-4c03-8ab9-d7316ae60119"
+    }
+  ],
+  "disciplinas": [
+    {
+      "nome": "Português A",
+      "carga_semanal": 4,
+      "tipo": "pesada",
+      "turmas": [
+        "6anoA",
+        "7anoA",
+        "8anoA",
+        "9anoA",
+        "1emA",
+        "2emA",
+        "3emA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "c3b1a74a-3ccf-48f5-9313-a5bb2aaba46d"
+    },
+    {
+      "nome": "Matemática",
+      "carga_semanal": 3,
+      "tipo": "pesada",
+      "turmas": [
+        "6anoA",
+        "7anoA",
+        "8anoA",
+        "9anoA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "70853de0-5c61-4fd7-b7c2-fc4d253bbbaa"
+    },
+    {
+      "nome": "Matemática",
+      "carga_semanal": 5,
+      "tipo": "pesada",
+      "turmas": [
+        "1emA",
+        "2emA",
+        "3emA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "57ea4032-8d3b-44a7-9db8-1b4d20dd251e"
+    },
+    {
+      "nome": "História A",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "6anoA",
+        "7anoA",
+        "8anoA",
+        "9anoA",
+        "1emA",
+        "2emA",
+        "3emA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "ee1a42bf-6f0a-465e-b3b8-7337b059842a"
+    },
+    {
+      "nome": "Geografia A",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "6anoA",
+        "7anoA",
+        "8anoA",
+        "9anoA",
+        "1emA",
+        "2emA",
+        "3emA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "b0320d4c-6056-4699-a07a-cbdafe6f41ff"
+    },
+    {
+      "nome": "Ciências A",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "6anoA",
+        "7anoA",
+        "8anoA",
+        "9anoA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "e4cc8f9f-a471-435f-930b-2ee5ea40883c"
+    },
+    {
+      "nome": "Biologia A",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "2emA",
+        "3emA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "aa8c802c-3401-454b-817f-650f3ed9cac0"
+    },
+    {
+      "nome": "Física A",
+      "carga_semanal": 2,
+      "tipo": "pesada",
+      "turmas": [
+        "1emA",
+        "2emA",
+        "3emA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "41082a42-ba9e-4bf6-891b-5cc4655b2411"
+    },
+    {
+      "nome": "Química A",
+      "carga_semanal": 2,
+      "tipo": "pesada",
+      "turmas": [
+        "1emA",
+        "2emA",
+        "3emA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "61f9ffce-29aa-4efd-8fa2-28753086f31b"
+    },
+    {
+      "nome": "Inglês A",
+      "carga_semanal": 2,
+      "tipo": "leve",
+      "turmas": [
+        "6anoA",
+        "7anoA",
+        "8anoA",
+        "9anoA",
+        "1emA",
+        "2emA",
+        "3emA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "8c9a4934-3a43-49e0-bce9-d8224a2751ee"
+    },
+    {
+      "nome": "Arte A",
+      "carga_semanal": 2,
+      "tipo": "leve",
+      "turmas": [
+        "6anoA",
+        "7anoA",
+        "8anoA",
+        "9anoA",
+        "1emA",
+        "2emA",
+        "3emA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "e23ca4dd-1ac7-4e52-8241-8a20a0f664bc"
+    },
+    {
+      "nome": "Educação Física A",
+      "carga_semanal": 2,
+      "tipo": "pratica",
+      "turmas": [
+        "6anoA",
+        "7anoA",
+        "8anoA",
+        "9anoA",
+        "1emA",
+        "2emA",
+        "3emA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "b555f22e-72bd-46d5-92cb-c232123d1f7f"
+    },
+    {
+      "nome": "Filosofia A",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "2emA",
+        "3emA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "d7616506-8ee2-4645-9bb3-b3ba97b347fb"
+    },
+    {
+      "nome": "Sociologia A",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "2emA",
+        "3emA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "8fda9c51-046e-4675-b82f-708f47ea1608"
+    },
+    {
+      "nome": "Informática A",
+      "carga_semanal": 2,
+      "tipo": "leve",
+      "turmas": [
+        "6anoA",
+        "7anoA",
+        "8anoA",
+        "9anoA",
+        "1emA",
+        "2emA",
+        "3emA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "3cfcaab4-3c8e-4de2-8e9d-60430e5d8663"
+    },
+    {
+      "nome": "Dinâmica A",
+      "carga_semanal": 2,
+      "tipo": "leve",
+      "turmas": [
+        "6anoA",
+        "7anoA",
+        "8anoA",
+        "9anoA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "70347e22-c0dd-4852-af5a-69c29c061532"
+    },
+    {
+      "nome": "Vida Pratica A",
+      "carga_semanal": 2,
+      "tipo": "leve",
+      "turmas": [
+        "6anoA",
+        "7anoA",
+        "8anoA",
+        "9anoA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "02b1d388-b664-481d-b63d-4531e088ecc7"
+    },
+    {
+      "nome": "Robotica A",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "2emA",
+        "3emA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "304642bc-96ff-4ead-bddb-2bb9cb0164df"
+    },
+    {
+      "nome": "Psicologia A",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "2emA",
+        "3emA"
+      ],
+      "grupo": "A",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "e2ed592a-9cfc-4f8e-af08-9c0bc1c72efc"
+    },
+    {
+      "nome": "Português B",
+      "carga_semanal": 4,
+      "tipo": "pesada",
+      "turmas": [
+        "6anoB",
+        "7anoB",
+        "8anoB",
+        "9anoB",
+        "1emB",
+        "2emB",
+        "3emB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "bc98e8aa-f7c7-4fe7-8c9c-16c7bfee341d"
+    },
+    {
+      "nome": "Matemática",
+      "carga_semanal": 5,
+      "tipo": "pesada",
+      "turmas": [
+        "1emB",
+        "2emB",
+        "3emB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "08c024af-6098-41ef-8b27-ce92aa9024bf"
+    },
+    {
+      "nome": "Matemática",
+      "carga_semanal": 4,
+      "tipo": "pesada",
+      "turmas": [
+        "6anoB",
+        "7anoB",
+        "8anoB",
+        "9anoB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "2a67d58d-4f11-4f4e-83a8-cb727214b639"
+    },
+    {
+      "nome": "História B",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "6anoB",
+        "7anoB",
+        "8anoB",
+        "9anoB",
+        "1emB",
+        "2emB",
+        "3emB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "96bded37-dd74-4d02-a5ab-62455c32ccd9"
+    },
+    {
+      "nome": "Geografia B",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "6anoB",
+        "7anoB",
+        "8anoB",
+        "9anoB",
+        "1emB",
+        "2emB",
+        "3emB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "5cd9e6bd-6261-498b-badc-fd57ebb2e083"
+    },
+    {
+      "nome": "Ciências B",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "6anoB",
+        "7anoB",
+        "8anoB",
+        "9anoB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "4e8dc673-cc22-4f9a-85b3-cd699106f38f"
+    },
+    {
+      "nome": "Biologia B",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emB",
+        "2emB",
+        "3emB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "10a78fd8-db61-4453-8301-749fa0ed1e9b"
+    },
+    {
+      "nome": "Física B",
+      "carga_semanal": 2,
+      "tipo": "pesada",
+      "turmas": [
+        "1emB",
+        "2emB",
+        "3emB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "e2e48f8d-ca5b-4992-a4ef-fd5a89c15016"
+    },
+    {
+      "nome": "Química B",
+      "carga_semanal": 2,
+      "tipo": "pesada",
+      "turmas": [
+        "1emB",
+        "2emB",
+        "3emB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "643dd783-85ac-4415-8da4-aa54cbbb5160"
+    },
+    {
+      "nome": "Inglês B",
+      "carga_semanal": 2,
+      "tipo": "leve",
+      "turmas": [
+        "6anoB",
+        "7anoB",
+        "8anoB",
+        "9anoB",
+        "1emB",
+        "2emB",
+        "3emB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "46e8a0aa-84e2-4189-9e11-12b8151489dc"
+    },
+    {
+      "nome": "Arte B",
+      "carga_semanal": 2,
+      "tipo": "leve",
+      "turmas": [
+        "6anoB",
+        "7anoB",
+        "8anoB",
+        "9anoB",
+        "1emB",
+        "2emB",
+        "3emB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "9b8235af-75c1-45f6-b50c-c508142f3e32"
+    },
+    {
+      "nome": "Educação Física B",
+      "carga_semanal": 2,
+      "tipo": "pratica",
+      "turmas": [
+        "6anoB",
+        "7anoB",
+        "8anoB",
+        "9anoB",
+        "1emB",
+        "2emB",
+        "3emB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "4c164357-ad1c-4bd6-8220-15b9418ee452"
+    },
+    {
+      "nome": "Filosofia B",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emB",
+        "2emB",
+        "3emB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "3e49a855-7e50-400a-8c32-95beb1640218"
+    },
+    {
+      "nome": "Sociologia B",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emB",
+        "2emB",
+        "3emB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "a5e8cb63-9a5d-46fe-91d2-ae57f47acb07"
+    },
+    {
+      "nome": "Informática B",
+      "carga_semanal": 2,
+      "tipo": "leve",
+      "turmas": [
+        "6anoB",
+        "7anoB",
+        "8anoB",
+        "9anoB",
+        "1emB",
+        "2emB",
+        "3emB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "fdcca908-8570-4d6f-bea6-95d7b9003604"
+    },
+    {
+      "nome": "Dinâmica B",
+      "carga_semanal": 1,
+      "tipo": "leve",
+      "turmas": [
+        "6anoB",
+        "7anoB",
+        "8anoB",
+        "9anoB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "5ecacf1f-0eec-46e6-b608-bc0b2ab950ec"
+    },
+    {
+      "nome": "Vida Pratica B",
+      "carga_semanal": 2,
+      "tipo": "leve",
+      "turmas": [
+        "6anoB",
+        "7anoB",
+        "8anoB",
+        "9anoB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "a0c308c3-d2c1-443e-aa94-eedee3299294"
+    },
+    {
+      "nome": "Psicologia B",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emB",
+        "2emB",
+        "3emB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "9e4d20b9-d713-45d4-81a5-3747478046d6"
+    },
+    {
+      "nome": "Sociologia B",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emB",
+        "2emB",
+        "3emB"
+      ],
+      "grupo": "B",
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "42e65e0e-403b-42c0-8e84-f87255ad0d32"
+    }
+  ],
+  "turmas": [
+    {
+      "nome": "6anoA",
+      "serie": "6ano",
+      "turno": "manha",
+      "grupo": "A",
+      "segmento": "EF_II",
+      "id": "671b5991-a346-42a2-913d-ad72de70808a"
+    },
+    {
+      "nome": "7anoA",
+      "serie": "7ano",
+      "turno": "manha",
+      "grupo": "A",
+      "segmento": "EF_II",
+      "id": "8c052aff-2c7e-4f09-a723-f5c4a56c93c9"
+    },
+    {
+      "nome": "8anoA",
+      "serie": "8ano",
+      "turno": "manha",
+      "grupo": "A",
+      "segmento": "EF_II",
+      "id": "ff3bfca2-edd4-40da-9232-29f6f991f4c9"
+    },
+    {
+      "nome": "9anoA",
+      "serie": "9ano",
+      "turno": "manha",
+      "grupo": "A",
+      "segmento": "EF_II",
+      "id": "48d5e536-a39a-476d-800b-b31074a8d31a"
+    },
+    {
+      "nome": "1emA",
+      "serie": "1em",
+      "turno": "manha",
+      "grupo": "A",
+      "segmento": "EM",
+      "id": "e8abc872-4e9d-4e51-be2f-9cc188e33229"
+    },
+    {
+      "nome": "2emA",
+      "serie": "2em",
+      "turno": "manha",
+      "grupo": "A",
+      "segmento": "EM",
+      "id": "bd9571c6-a981-4032-85bf-791e5739c52d"
+    },
+    {
+      "nome": "3emA",
+      "serie": "3em",
+      "turno": "manha",
+      "grupo": "A",
+      "segmento": "EM",
+      "id": "bf11342a-82f5-4f80-91c4-27f02d31bd91"
+    },
+    {
+      "nome": "6anoB",
+      "serie": "6ano",
+      "turno": "manha",
+      "grupo": "B",
+      "segmento": "EF_II",
+      "id": "3076f9be-0032-4e01-a532-2d093d931d12"
+    },
+    {
+      "nome": "7anoB",
+      "serie": "7ano",
+      "turno": "manha",
+      "grupo": "B",
+      "segmento": "EF_II",
+      "id": "5bbe8b85-7257-41bc-b43b-2124ad9ddba3"
+    },
+    {
+      "nome": "8anoB",
+      "serie": "8ano",
+      "turno": "manha",
+      "grupo": "B",
+      "segmento": "EF_II",
+      "id": "3006ed81-6d44-4f75-8246-d9cf8d39d070"
+    },
+    {
+      "nome": "9anoB",
+      "serie": "9ano",
+      "turno": "manha",
+      "grupo": "B",
+      "segmento": "EF_II",
+      "id": "d2eb51d8-3b73-4e19-8928-6f9ad3ee4663"
+    },
+    {
+      "nome": "1emB",
+      "serie": "1em",
+      "turno": "manha",
+      "grupo": "B",
+      "segmento": "EM",
+      "id": "241b5c8e-e9cd-4ea9-9df6-f3c555c4e2c4"
+    },
+    {
+      "nome": "2emB",
+      "serie": "2em",
+      "turno": "manha",
+      "grupo": "B",
+      "segmento": "EM",
+      "id": "c44d61ef-9d68-4a3d-9014-7ea439b00cdc"
+    },
+    {
+      "nome": "3emB",
+      "serie": "3em",
+      "turno": "manha",
+      "grupo": "B",
+      "segmento": "EM",
+      "id": "0f5f5097-81f7-4c29-8496-cf43f2a332aa"
+    }
+  ],
+  "salas": [
+    {
+      "nome": "Sala 1",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "72f9858a-80de-44ec-9942-4ad1ae43f3cc"
+    },
+    {
+      "nome": "Sala 2",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "1741d94c-4674-426a-b7b7-e8e2c09b55b1"
+    },
+    {
+      "nome": "Sala 3",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "0b189dfc-1c1b-44f3-8de3-e12867b9fa24"
+    },
+    {
+      "nome": "Sala 4",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "1a35961e-c644-4b2a-beec-f9561421c49f"
+    },
+    {
+      "nome": "Sala 5",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "05f6d4ba-e6e6-4bc1-aacc-7503828455b3"
+    },
+    {
+      "nome": "Sala 6",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "353281c9-0d23-4b5a-bf2b-2491033c9516"
+    },
+    {
+      "nome": "Sala 7",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "bbfbd537-0f85-49a9-8e9f-c609281ea9f3"
+    },
+    {
+      "nome": "Sala 8",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "c84b7f9b-a814-4f56-ab1f-cfb1e2726c30"
+    },
+    {
+      "nome": "Sala 9",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "76ef4859-2be4-42e8-96a9-6f571050ba2e"
+    },
+    {
+      "nome": "Sala 10",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "ce25bfce-1943-4165-bf8f-1f1bda4a14dc"
+    },
+    {
+      "nome": "Sala 11",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "d374fb8f-30ee-4efd-9d87-ec428005f65c"
+    },
+    {
+      "nome": "Sala 12",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "9c6bdc35-cb9f-4aa0-a622-aec71c6ed6af"
+    },
+    {
+      "nome": "Sala 13",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "def4ea33-117f-4a6a-9179-30529b0d3104"
+    },
+    {
+      "nome": "Sala 14",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "c9b697ba-0230-4b3c-9696-f783fa823872"
+    },
+    {
+      "nome": "Laboratório de Ciências",
+      "capacidade": 25,
+      "tipo": "laboratório",
+      "id": "e0284188-0729-4ac8-a55a-a1562dd8c8df"
+    },
+    {
+      "nome": "Auditório",
+      "capacidade": 100,
+      "tipo": "auditório",
+      "id": "f01f5c29-dcee-457a-8a6c-050ae78f1539"
+    }
+  ],
+  "aulas": [
+    {
+      "turma": "6anoA",
+      "disciplina": "Geografia A",
+      "professor": "Rene",
+      "dia": "quarta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Inglês A",
+      "professor": "Maria Luiza",
+      "dia": "segunda",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Português A",
+      "professor": "Heliana",
+      "dia": "quinta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Português A",
+      "professor": "Deise",
+      "dia": "segunda",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Português A",
+      "professor": "Loide",
+      "dia": "sexta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Ciências A",
+      "professor": "Marina",
+      "dia": "sexta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Arte A",
+      "professor": "Vanessa",
+      "dia": "terca",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Matemática",
+      "professor": "Tatiane",
+      "dia": "quarta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Português A",
+      "professor": "Heliana",
+      "dia": "quarta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Educação Física A",
+      "professor": "Marcão",
+      "dia": "segunda",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Vida Pratica A",
+      "professor": "Andréia Barreto",
+      "dia": "quarta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "História A",
+      "professor": "Laís",
+      "dia": "terca",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Inglês A",
+      "professor": "Maria Luiza",
+      "dia": "terca",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Informática A",
+      "professor": "César",
+      "dia": "quarta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Arte A",
+      "professor": "Vanessa",
+      "dia": "segunda",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Geografia A",
+      "professor": "Gisele",
+      "dia": "sexta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "História A",
+      "professor": "Waldemar",
+      "dia": "sexta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Matemática",
+      "professor": "Ricardo",
+      "dia": "quinta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Vida Pratica A",
+      "professor": "Andréia Barreto",
+      "dia": "terca",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Dinâmica A",
+      "professor": "Andréia Barreto",
+      "dia": "segunda",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Educação Física A",
+      "professor": "Andréia",
+      "dia": "sexta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Informática A",
+      "professor": "César",
+      "dia": "terca",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Dinâmica A",
+      "professor": "Andréia Barreto",
+      "dia": "quinta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Matemática",
+      "professor": "Tatiane II",
+      "dia": "quinta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoA",
+      "disciplina": "Ciências A",
+      "professor": "Marina",
+      "dia": "quinta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Arte A",
+      "professor": "Vanessa",
+      "dia": "quarta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Informática A",
+      "professor": "César",
+      "dia": "terca",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Ciências A",
+      "professor": "Marina",
+      "dia": "sexta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "quarta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Vida Pratica A",
+      "professor": "Andréia Barreto",
+      "dia": "quarta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Matemática",
+      "professor": "Andréia Lucia",
+      "dia": "sexta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Dinâmica A",
+      "professor": "Andréia Barreto",
+      "dia": "terca",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Português A",
+      "professor": "Loide",
+      "dia": "segunda",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Dinâmica A",
+      "professor": "Andréia Barreto",
+      "dia": "sexta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Ciências A",
+      "professor": "Marina",
+      "dia": "segunda",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Educação Física A",
+      "professor": "Marcão",
+      "dia": "sexta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Arte A",
+      "professor": "Vanessa",
+      "dia": "quinta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "História A",
+      "professor": "Laís",
+      "dia": "segunda",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Geografia A",
+      "professor": "Rene",
+      "dia": "segunda",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Informática A",
+      "professor": "César",
+      "dia": "segunda",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Inglês A",
+      "professor": "Maria Luiza",
+      "dia": "terca",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Português A",
+      "professor": "Deise",
+      "dia": "terca",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Educação Física A",
+      "professor": "Andréia",
+      "dia": "terca",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "História A",
+      "professor": "Waldemar",
+      "dia": "quarta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Vida Pratica A",
+      "professor": "Andréia Barreto",
+      "dia": "quinta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Geografia A",
+      "professor": "Gisele",
+      "dia": "sexta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Português A",
+      "professor": "Heliana",
+      "dia": "quinta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Português A",
+      "professor": "Deise",
+      "dia": "quarta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Inglês A",
+      "professor": "Maria Luiza",
+      "dia": "quinta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoA",
+      "disciplina": "Matemática",
+      "professor": "Tatiane",
+      "dia": "quinta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Geografia A",
+      "professor": "Rene",
+      "dia": "segunda",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Inglês A",
+      "professor": "Maria Luiza",
+      "dia": "sexta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Ciências A",
+      "professor": "Marina",
+      "dia": "quarta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Matemática",
+      "professor": "Ricardo",
+      "dia": "segunda",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "História A",
+      "professor": "Laís",
+      "dia": "quinta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Dinâmica A",
+      "professor": "Andréia Barreto",
+      "dia": "terca",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Português A",
+      "professor": "Loide",
+      "dia": "terca",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Educação Física A",
+      "professor": "Marcão",
+      "dia": "quarta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Arte A",
+      "professor": "Vanessa",
+      "dia": "quarta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Matemática",
+      "professor": "Tatiane II",
+      "dia": "sexta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Educação Física A",
+      "professor": "Andréia",
+      "dia": "sexta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Vida Pratica A",
+      "professor": "Andréia Barreto",
+      "dia": "quinta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Vida Pratica A",
+      "professor": "Andréia Barreto",
+      "dia": "segunda",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Informática A",
+      "professor": "César",
+      "dia": "quarta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Inglês A",
+      "professor": "Maria Luiza",
+      "dia": "quarta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Geografia A",
+      "professor": "Gisele",
+      "dia": "terca",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "sexta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Português A",
+      "professor": "Heliana",
+      "dia": "segunda",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "História A",
+      "professor": "Waldemar",
+      "dia": "terca",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Informática A",
+      "professor": "César",
+      "dia": "segunda",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Dinâmica A",
+      "professor": "Andréia Barreto",
+      "dia": "quinta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Ciências A",
+      "professor": "Marina",
+      "dia": "quinta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Arte A",
+      "professor": "Vanessa",
+      "dia": "quinta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Português A",
+      "professor": "Deise",
+      "dia": "terca",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoA",
+      "disciplina": "Português A",
+      "professor": "Loide",
+      "dia": "sexta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "História A",
+      "professor": "Laís",
+      "dia": "quinta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Português A",
+      "professor": "Heliana",
+      "dia": "terca",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Geografia A",
+      "professor": "Rene",
+      "dia": "segunda",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Educação Física A",
+      "professor": "Marcão",
+      "dia": "segunda",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Ciências A",
+      "professor": "Marina",
+      "dia": "terca",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Português A",
+      "professor": "Deise",
+      "dia": "segunda",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "História A",
+      "professor": "Laís",
+      "dia": "sexta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Vida Pratica A",
+      "professor": "Andréia Barreto",
+      "dia": "sexta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Arte A",
+      "professor": "Vanessa",
+      "dia": "sexta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Arte A",
+      "professor": "Vanessa",
+      "dia": "sexta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Ciências A",
+      "professor": "Marina",
+      "dia": "quinta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Informática A",
+      "professor": "César",
+      "dia": "sexta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Dinâmica A",
+      "professor": "Andréia Barreto",
+      "dia": "quarta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Educação Física A",
+      "professor": "Andréia",
+      "dia": "quinta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Vida Pratica A",
+      "professor": "Andréia Barreto",
+      "dia": "terca",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Matemática",
+      "professor": "Andréia Lucia",
+      "dia": "segunda",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Geografia A",
+      "professor": "Gisele",
+      "dia": "quarta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Matemática",
+      "professor": "Tatiane",
+      "dia": "terca",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Informática A",
+      "professor": "César",
+      "dia": "segunda",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Inglês A",
+      "professor": "Maria Luiza",
+      "dia": "quinta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Português A",
+      "professor": "Loide",
+      "dia": "quarta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Dinâmica A",
+      "professor": "Andréia Barreto",
+      "dia": "quarta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Inglês A",
+      "professor": "Maria Luiza",
+      "dia": "quinta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Matemática",
+      "professor": "Ricardo",
+      "dia": "quarta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoA",
+      "disciplina": "Português A",
+      "professor": "Heliana",
+      "dia": "terca",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Educação Física B",
+      "professor": "Marcão",
+      "dia": "quinta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Português B",
+      "professor": "Deise",
+      "dia": "sexta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Ciências B",
+      "professor": "Marina",
+      "dia": "quinta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "História B",
+      "professor": "Waldemar",
+      "dia": "terca",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Ciências B",
+      "professor": "Marina",
+      "dia": "segunda",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Educação Física B",
+      "professor": "Andréia",
+      "dia": "quarta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Vida Pratica B",
+      "professor": "Andréia Barreto",
+      "dia": "sexta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Arte B",
+      "professor": "Vanessa",
+      "dia": "quarta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Português B",
+      "professor": "Loide",
+      "dia": "quarta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Matemática",
+      "professor": "Tatiane II",
+      "dia": "segunda",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Geografia B",
+      "professor": "Rene",
+      "dia": "quinta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "História B",
+      "professor": "Waldemar",
+      "dia": "segunda",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Informática B",
+      "professor": "César",
+      "dia": "quarta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Dinâmica B",
+      "professor": "Andréia Barreto",
+      "dia": "segunda",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Informática B",
+      "professor": "César",
+      "dia": "sexta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "quarta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Inglês B",
+      "professor": "Maria Luiza",
+      "dia": "terca",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Português B",
+      "professor": "Heliana",
+      "dia": "terca",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Inglês B",
+      "professor": "Maria Luiza",
+      "dia": "sexta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Arte B",
+      "professor": "Vanessa",
+      "dia": "terca",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Matemática",
+      "professor": "Tatiane",
+      "dia": "sexta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Vida Pratica B",
+      "professor": "Andréia Barreto",
+      "dia": "quinta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Português B",
+      "professor": "Deise",
+      "dia": "terca",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Geografia B",
+      "professor": "Gisele",
+      "dia": "segunda",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "6anoB",
+      "disciplina": "Matemática",
+      "professor": "Andréia Lucia",
+      "dia": "quinta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Matemática",
+      "professor": "Ricardo",
+      "dia": "sexta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Inglês B",
+      "professor": "Maria Luiza",
+      "dia": "quarta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Arte B",
+      "professor": "Vanessa",
+      "dia": "sexta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Português B",
+      "professor": "Loide",
+      "dia": "quinta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Português B",
+      "professor": "Heliana",
+      "dia": "segunda",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Vida Pratica B",
+      "professor": "Andréia Barreto",
+      "dia": "segunda",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Geografia B",
+      "professor": "Gisele",
+      "dia": "segunda",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "História B",
+      "professor": "Laís",
+      "dia": "segunda",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Matemática",
+      "professor": "Tatiane II",
+      "dia": "segunda",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Ciências B",
+      "professor": "Marina",
+      "dia": "quarta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Educação Física B",
+      "professor": "Andréia",
+      "dia": "quarta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "quinta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Português B",
+      "professor": "Deise",
+      "dia": "quarta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Educação Física B",
+      "professor": "Marcão",
+      "dia": "terca",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "História B",
+      "professor": "Waldemar",
+      "dia": "sexta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Inglês B",
+      "professor": "Maria Luiza",
+      "dia": "quarta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Matemática",
+      "professor": "Andréia Lucia",
+      "dia": "terca",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Informática B",
+      "professor": "César",
+      "dia": "sexta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Informática B",
+      "professor": "César",
+      "dia": "quinta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Geografia B",
+      "professor": "Rene",
+      "dia": "quinta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Ciências B",
+      "professor": "Marina",
+      "dia": "terca",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Arte B",
+      "professor": "Vanessa",
+      "dia": "sexta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "7anoB",
+      "disciplina": "Português B",
+      "professor": "Loide",
+      "dia": "terca",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Matemática",
+      "professor": "Tatiane",
+      "dia": "quarta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Geografia B",
+      "professor": "Rene",
+      "dia": "sexta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Inglês B",
+      "professor": "Maria Luiza",
+      "dia": "segunda",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Português B",
+      "professor": "Heliana",
+      "dia": "sexta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Português B",
+      "professor": "Deise",
+      "dia": "quinta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Dinâmica B",
+      "professor": "Andréia Barreto",
+      "dia": "sexta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Inglês B",
+      "professor": "Maria Luiza",
+      "dia": "quarta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Informática B",
+      "professor": "César",
+      "dia": "segunda",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Matemática",
+      "professor": "Ricardo",
+      "dia": "quinta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Ciências B",
+      "professor": "Marina",
+      "dia": "terca",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Vida Pratica B",
+      "professor": "Andréia Barreto",
+      "dia": "terca",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Arte B",
+      "professor": "Vanessa",
+      "dia": "quinta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Matemática",
+      "professor": "Tatiane II",
+      "dia": "segunda",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Informática B",
+      "professor": "César",
+      "dia": "sexta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Ciências B",
+      "professor": "Marina",
+      "dia": "segunda",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Português B",
+      "professor": "Heliana",
+      "dia": "quarta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "História B",
+      "professor": "Laís",
+      "dia": "terca",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Geografia B",
+      "professor": "Gisele",
+      "dia": "quinta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "quinta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Educação Física B",
+      "professor": "Marcão",
+      "dia": "segunda",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Educação Física B",
+      "professor": "Marcão",
+      "dia": "terca",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Vida Pratica B",
+      "professor": "Andréia Barreto",
+      "dia": "quarta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Arte B",
+      "professor": "Vanessa",
+      "dia": "terca",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "História B",
+      "professor": "Waldemar",
+      "dia": "quarta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "8anoB",
+      "disciplina": "Português B",
+      "professor": "Loide",
+      "dia": "sexta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Dinâmica B",
+      "professor": "Andréia Barreto",
+      "dia": "segunda",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Informática B",
+      "professor": "César",
+      "dia": "quinta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Português B",
+      "professor": "Deise",
+      "dia": "sexta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Inglês B",
+      "professor": "Maria Luiza",
+      "dia": "quinta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Inglês B",
+      "professor": "Maria Luiza",
+      "dia": "quarta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Português B",
+      "professor": "Loide",
+      "dia": "terca",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Ciências B",
+      "professor": "Marina",
+      "dia": "sexta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Português B",
+      "professor": "Deise",
+      "dia": "terca",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Matemática",
+      "professor": "Andréia Lucia",
+      "dia": "segunda",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Arte B",
+      "professor": "Vanessa",
+      "dia": "segunda",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "História B",
+      "professor": "Laís",
+      "dia": "quarta",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Educação Física B",
+      "professor": "Andréia",
+      "dia": "quarta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Português B",
+      "professor": "Heliana",
+      "dia": "sexta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Matemática",
+      "professor": "Tatiane",
+      "dia": "segunda",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Arte B",
+      "professor": "Vanessa",
+      "dia": "segunda",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Informática B",
+      "professor": "César",
+      "dia": "quarta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Matemática",
+      "professor": "Tatiane II",
+      "dia": "quinta",
+      "horario": 4,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Geografia B",
+      "professor": "Rene",
+      "dia": "terca",
+      "horario": 1,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "quarta",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Educação Física B",
+      "professor": "Andréia",
+      "dia": "terca",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Geografia B",
+      "professor": "Gisele",
+      "dia": "quinta",
+      "horario": 3,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "Ciências B",
+      "professor": "Marina",
+      "dia": "sexta",
+      "horario": 5,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "9anoB",
+      "disciplina": "História B",
+      "professor": "Waldemar",
+      "dia": "terca",
+      "horario": 2,
+      "segmento": "EF_II"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Educação Física A",
+      "professor": "Marcão",
+      "dia": "quinta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Sociologia A",
+      "professor": "Anna Maria",
+      "dia": "terca",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Português A",
+      "professor": "Loide",
+      "dia": "terca",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Português A",
+      "professor": "Loide",
+      "dia": "terca",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Matemática",
+      "professor": "Ricardo",
+      "dia": "segunda",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Informática A",
+      "professor": "César",
+      "dia": "sexta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "História A",
+      "professor": "Waldemar",
+      "dia": "segunda",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Física A",
+      "professor": "César",
+      "dia": "quarta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Matemática",
+      "professor": "Andréia Lucia",
+      "dia": "segunda",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Português A",
+      "professor": "Deise",
+      "dia": "quarta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Matemática",
+      "professor": "Tatiane",
+      "dia": "segunda",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Português A",
+      "professor": "Heliana",
+      "dia": "quarta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Matemática",
+      "professor": "Tatiane II",
+      "dia": "quinta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Matemática",
+      "professor": "Ricardo",
+      "dia": "quinta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Arte A",
+      "professor": "Vanessa",
+      "dia": "terca",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Filosofia A",
+      "professor": "Anna Maria",
+      "dia": "sexta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Geografia A",
+      "professor": "Rene",
+      "dia": "segunda",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Geografia A",
+      "professor": "Rene",
+      "dia": "sexta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Biologia A",
+      "professor": "Marina",
+      "dia": "quinta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Inglês A",
+      "professor": "Maria Luiza",
+      "dia": "quarta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Arte A",
+      "professor": "Vanessa",
+      "dia": "quarta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Biologia A",
+      "professor": "Marina",
+      "dia": "segunda",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Inglês A",
+      "professor": "Maria Luiza",
+      "dia": "quarta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Educação Física A",
+      "professor": "Andréia",
+      "dia": "sexta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "História A",
+      "professor": "Laís",
+      "dia": "sexta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Física A",
+      "professor": "César",
+      "dia": "terca",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Informática A",
+      "professor": "César",
+      "dia": "terca",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Filosofia A",
+      "professor": "Anna Maria",
+      "dia": "quinta",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Química A",
+      "professor": "Vladmir",
+      "dia": "sexta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Sociologia A",
+      "professor": "Anna Maria",
+      "dia": "quarta",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Química A",
+      "professor": "Zabuor",
+      "dia": "segunda",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Biologia A",
+      "professor": "Marina",
+      "dia": "terca",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "História A",
+      "professor": "Laís",
+      "dia": "quarta",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Inglês A",
+      "professor": "Maria Luiza",
+      "dia": "quinta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Física A",
+      "professor": "César",
+      "dia": "segunda",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Português A",
+      "professor": "Heliana",
+      "dia": "quinta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Biologia A",
+      "professor": "Marina",
+      "dia": "sexta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Sociologia A",
+      "professor": "Anna Maria",
+      "dia": "quarta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Informática A",
+      "professor": "César",
+      "dia": "quinta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "segunda",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Filosofia A",
+      "professor": "Anna Maria",
+      "dia": "quinta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Geografia A",
+      "professor": "Gisele",
+      "dia": "terca",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Geografia A",
+      "professor": "Gisele",
+      "dia": "terca",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Arte A",
+      "professor": "Vanessa",
+      "dia": "quarta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Matemática",
+      "professor": "Tatiane",
+      "dia": "segunda",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Química A",
+      "professor": "Vladmir",
+      "dia": "terca",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Química A",
+      "professor": "Zabuor",
+      "dia": "sexta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Filosofia A",
+      "professor": "Anna Maria",
+      "dia": "segunda",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Informática A",
+      "professor": "César",
+      "dia": "sexta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "História A",
+      "professor": "Waldemar",
+      "dia": "quarta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Português A",
+      "professor": "Deise",
+      "dia": "sexta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Matemática",
+      "professor": "Andréia Lucia",
+      "dia": "terca",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Português A",
+      "professor": "Loide",
+      "dia": "quarta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Matemática",
+      "professor": "Ricardo",
+      "dia": "sexta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Inglês A",
+      "professor": "Maria Luiza",
+      "dia": "quinta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Física A",
+      "professor": "César",
+      "dia": "quinta",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Sociologia A",
+      "professor": "Anna Maria",
+      "dia": "terca",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Arte A",
+      "professor": "Vanessa",
+      "dia": "segunda",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Matemática",
+      "professor": "Tatiane II",
+      "dia": "terca",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Educação Física A",
+      "professor": "Andréia",
+      "dia": "segunda",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Educação Física A",
+      "professor": "Marcão",
+      "dia": "sexta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emA",
+      "disciplina": "Português A",
+      "professor": "Heliana",
+      "dia": "segunda",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "História A",
+      "professor": "Laís",
+      "dia": "sexta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Geografia A",
+      "professor": "Rene",
+      "dia": "segunda",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Português A",
+      "professor": "Deise",
+      "dia": "quinta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "quinta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Filosofia A",
+      "professor": "Anna Maria",
+      "dia": "segunda",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Matemática",
+      "professor": "Andréia Lucia",
+      "dia": "sexta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Matemática",
+      "professor": "Tatiane",
+      "dia": "quarta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Química A",
+      "professor": "Zabuor",
+      "dia": "terca",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Informática A",
+      "professor": "César",
+      "dia": "terca",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Filosofia A",
+      "professor": "Anna Maria",
+      "dia": "quarta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Sociologia A",
+      "professor": "Anna Maria",
+      "dia": "terca",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "História A",
+      "professor": "Waldemar",
+      "dia": "sexta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Informática A",
+      "professor": "César",
+      "dia": "quarta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Educação Física A",
+      "professor": "Andréia",
+      "dia": "segunda",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Física A",
+      "professor": "César",
+      "dia": "sexta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Português A",
+      "professor": "Loide",
+      "dia": "segunda",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Biologia A",
+      "professor": "Marina",
+      "dia": "quinta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Biologia A",
+      "professor": "Marina",
+      "dia": "segunda",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Arte A",
+      "professor": "Vanessa",
+      "dia": "terca",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Inglês A",
+      "professor": "Maria Luiza",
+      "dia": "terca",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Português A",
+      "professor": "Heliana",
+      "dia": "sexta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Português A",
+      "professor": "Deise",
+      "dia": "quinta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Química A",
+      "professor": "Vladmir",
+      "dia": "quinta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Matemática",
+      "professor": "Ricardo",
+      "dia": "terca",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Educação Física A",
+      "professor": "Marcão",
+      "dia": "sexta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Geografia A",
+      "professor": "Gisele",
+      "dia": "sexta",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Matemática",
+      "professor": "Tatiane II",
+      "dia": "quarta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Arte A",
+      "professor": "Vanessa",
+      "dia": "quinta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Sociologia A",
+      "professor": "Anna Maria",
+      "dia": "segunda",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emA",
+      "disciplina": "Inglês A",
+      "professor": "Maria Luiza",
+      "dia": "segunda",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Português B",
+      "professor": "Heliana",
+      "dia": "sexta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Arte B",
+      "professor": "Vanessa",
+      "dia": "quinta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Química B",
+      "professor": "Vladmir",
+      "dia": "quarta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Português B",
+      "professor": "Loide",
+      "dia": "quarta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Filosofia B",
+      "professor": "Anna Maria",
+      "dia": "terca",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Sociologia B",
+      "professor": "Anna Maria",
+      "dia": "quarta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "quinta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Física B",
+      "professor": "César",
+      "dia": "terca",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Geografia B",
+      "professor": "Gisele",
+      "dia": "segunda",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Português B",
+      "professor": "Deise",
+      "dia": "terca",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Matemática",
+      "professor": "Andréia Lucia",
+      "dia": "quarta",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Arte B",
+      "professor": "Vanessa",
+      "dia": "quinta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Sociologia B",
+      "professor": "Anna Maria",
+      "dia": "quinta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Inglês B",
+      "professor": "Maria Luiza",
+      "dia": "sexta",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Biologia B",
+      "professor": "Marina",
+      "dia": "quarta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Matemática",
+      "professor": "Tatiane",
+      "dia": "quinta",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Sociologia B",
+      "professor": "Anna Maria",
+      "dia": "segunda",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Biologia B",
+      "professor": "Marina",
+      "dia": "segunda",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Informática B",
+      "professor": "César",
+      "dia": "segunda",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Matemática",
+      "professor": "Ricardo",
+      "dia": "sexta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "História B",
+      "professor": "Laís",
+      "dia": "segunda",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Educação Física B",
+      "professor": "Marcão",
+      "dia": "sexta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Inglês B",
+      "professor": "Maria Luiza",
+      "dia": "segunda",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Português B",
+      "professor": "Loide",
+      "dia": "segunda",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Sociologia B",
+      "professor": "Anna Maria",
+      "dia": "sexta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "História B",
+      "professor": "Laís",
+      "dia": "terca",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Geografia B",
+      "professor": "Rene",
+      "dia": "terca",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Educação Física B",
+      "professor": "Marcão",
+      "dia": "terca",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "terca",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Filosofia B",
+      "professor": "Anna Maria",
+      "dia": "quarta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emB",
+      "disciplina": "Química B",
+      "professor": "Zabuor",
+      "dia": "quinta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Português B",
+      "professor": "Heliana",
+      "dia": "segunda",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Física B",
+      "professor": "César",
+      "dia": "quinta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Química B",
+      "professor": "Vladmir",
+      "dia": "sexta",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Português B",
+      "professor": "Deise",
+      "dia": "terca",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Química B",
+      "professor": "Zabuor",
+      "dia": "sexta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Geografia B",
+      "professor": "Rene",
+      "dia": "sexta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Física B",
+      "professor": "César",
+      "dia": "terca",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Inglês B",
+      "professor": "Maria Luiza",
+      "dia": "sexta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Arte B",
+      "professor": "Vanessa",
+      "dia": "terca",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Matemática",
+      "professor": "Tatiane II",
+      "dia": "sexta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Informática B",
+      "professor": "César",
+      "dia": "quinta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Biologia B",
+      "professor": "Marina",
+      "dia": "quarta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Matemática",
+      "professor": "Andréia Lucia",
+      "dia": "quarta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Informática B",
+      "professor": "César",
+      "dia": "segunda",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Sociologia B",
+      "professor": "Anna Maria",
+      "dia": "segunda",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Matemática",
+      "professor": "Tatiane",
+      "dia": "terca",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Sociologia B",
+      "professor": "Anna Maria",
+      "dia": "segunda",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Filosofia B",
+      "professor": "Anna Maria",
+      "dia": "quinta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Português B",
+      "professor": "Loide",
+      "dia": "quinta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Biologia B",
+      "professor": "Marina",
+      "dia": "quinta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Sociologia B",
+      "professor": "Anna Maria",
+      "dia": "quinta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Educação Física B",
+      "professor": "Andréia",
+      "dia": "segunda",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "História B",
+      "professor": "Waldemar",
+      "dia": "quarta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Sociologia B",
+      "professor": "Anna Maria",
+      "dia": "terca",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Arte B",
+      "professor": "Vanessa",
+      "dia": "quarta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "História B",
+      "professor": "Laís",
+      "dia": "sexta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Inglês B",
+      "professor": "Maria Luiza",
+      "dia": "sexta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Educação Física B",
+      "professor": "Andréia",
+      "dia": "quarta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Matemática",
+      "professor": "Ricardo",
+      "dia": "quarta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Português B",
+      "professor": "Heliana",
+      "dia": "segunda",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Matemática",
+      "professor": "Tatiane II",
+      "dia": "terca",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Geografia B",
+      "professor": "Gisele",
+      "dia": "quinta",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "2emB",
+      "disciplina": "Filosofia B",
+      "professor": "Anna Maria",
+      "dia": "terca",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Sociologia B",
+      "professor": "Anna Maria",
+      "dia": "quinta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Química B",
+      "professor": "Vladmir",
+      "dia": "sexta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Arte B",
+      "professor": "Vanessa",
+      "dia": "terca",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Português B",
+      "professor": "Heliana",
+      "dia": "terca",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Física B",
+      "professor": "César",
+      "dia": "quinta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Filosofia B",
+      "professor": "Anna Maria",
+      "dia": "quinta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "terca",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Geografia B",
+      "professor": "Rene",
+      "dia": "terca",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Matemática",
+      "professor": "Tatiane",
+      "dia": "sexta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Inglês B",
+      "professor": "Maria Luiza",
+      "dia": "sexta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Matemática",
+      "professor": "Andréia Lucia",
+      "dia": "quarta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Biologia B",
+      "professor": "Marina",
+      "dia": "segunda",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Sociologia B",
+      "professor": "Anna Maria",
+      "dia": "segunda",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Sociologia B",
+      "professor": "Anna Maria",
+      "dia": "quarta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Química B",
+      "professor": "Zabuor",
+      "dia": "quarta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Educação Física B",
+      "professor": "Marcão",
+      "dia": "quinta",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Português B",
+      "professor": "Deise",
+      "dia": "segunda",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Biologia B",
+      "professor": "Marina",
+      "dia": "terca",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Matemática",
+      "professor": "Ricardo",
+      "dia": "quarta",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "História B",
+      "professor": "Waldemar",
+      "dia": "segunda",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Arte B",
+      "professor": "Vanessa",
+      "dia": "quarta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Geografia B",
+      "professor": "Gisele",
+      "dia": "quarta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Português B",
+      "professor": "Deise",
+      "dia": "sexta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Filosofia B",
+      "professor": "Anna Maria",
+      "dia": "sexta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "quinta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Inglês B",
+      "professor": "Maria Luiza",
+      "dia": "segunda",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Sociologia B",
+      "professor": "Anna Maria",
+      "dia": "sexta",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Educação Física B",
+      "professor": "Marcão",
+      "dia": "quinta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "História B",
+      "professor": "Waldemar",
+      "dia": "terca",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "3emB",
+      "disciplina": "Português B",
+      "professor": "Loide",
+      "dia": "quinta",
+      "horario": 3,
+      "segmento": "EM"
+    }
+  ],
+  "feriados": [],
+  "periodos": []
+}
