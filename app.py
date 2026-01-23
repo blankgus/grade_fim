@@ -123,7 +123,12 @@ def obter_segmento_professor(professor):
         return "AMBOS"
 
 def obter_limite_horas_professor(professor):
-    """Retorna o limite de horas semanais para o professor"""
+    """Retorna o limite de horas semanais para o professor (individual ou baseado no segmento)"""
+    # PRIORIDADE 1: Usar carga_horaria_maxima individual se disponível
+    if hasattr(professor, 'carga_horaria_maxima') and professor.carga_horaria_maxima:
+        return professor.carga_horaria_maxima
+    
+    # PRIORIDADE 2: Calcular baseado no segmento (fallback)
     segmento = obter_segmento_professor(professor)
     
     if segmento == "EF_II":
@@ -144,6 +149,15 @@ def calcular_horas_professor(professor, aulas):
             total_horas += 1
     
     return total_horas
+
+def obter_carga_disciplina_turma(disciplina, turma_nome):
+    """Obtém a carga semanal de uma disciplina para uma turma específica"""
+    if hasattr(disciplina, 'obter_carga_turma'):
+        return disciplina.obter_carga_turma(turma_nome)
+    # Fallback para compatibilidade
+    if hasattr(disciplina, 'carga_por_turma') and disciplina.carga_por_turma and turma_nome in disciplina.carga_por_turma:
+        return disciplina.carga_por_turma[turma_nome]
+    return disciplina.carga_semanal
 
 def obter_horarios_turma(turma_nome):
     """Retorna os períodos disponíveis para a turma"""
@@ -1391,7 +1405,7 @@ def salvar_grade_como(nome, aulas, config):
 # ============================================
 # MENU DE ABAS
 # ============================================
-abas = st.tabs(["🏠 Início", "📚 Disciplinas", "👩‍🏫 Professores", "🎒 Turmas", "🏫 Salas", "🗓️ Gerar Grade", "👨‍🏫 Grade por Professor", "🔧 Diagnóstico"])
+abas = st.tabs(["🏠 Início", "📚 Disciplinas", "👩‍🏫 Professores", "🎒 Turmas", "🏫 Salas", "🗓️ Gerar Grade", "👨‍🏫 Grade por Professor", "📦 Versões de Grades", "🔧 Diagnóstico"])
 
 # ============================================
 # ABA INÍCIO
@@ -1474,7 +1488,11 @@ with abas[1]:
             col1, col2 = st.columns(2)
             with col1:
                 nome = st.text_input("Nome da Disciplina*")
-                carga = st.number_input("Carga Semanal*", 1, 10, 3)
+                carga_padrao = st.number_input(
+                    "Carga Semanal Padrão*", 
+                    1, 10, 3,
+                    help="Carga padrão que será aplicada a todas as turmas (pode ser ajustada individualmente depois)"
+                )
                 tipo = st.selectbox("Tipo*", ["pesada", "media", "leve", "pratica"])
             with col2:
                 turmas_opcoes = [t.nome for t in st.session_state.turmas]
@@ -1483,39 +1501,95 @@ with abas[1]:
                 cor_fundo = st.color_picker("Cor de Fundo", "#4A90E2")
                 cor_fonte = st.color_picker("Cor da Fonte", "#FFFFFF")
             
-            # Mostrar professores disponíveis para esta disciplina
+            # NOVO: Carga individual por turma
+            if turmas_selecionadas:
+                st.divider()
+                st.write("### 📊 Carga Horária Individual por Turma")
+                st.caption(f"Defina a carga semanal específica para cada turma (padrão: {carga_padrao}h)")
+                
+                carga_por_turma_temp = {}
+                
+                # Mostrar em colunas para economizar espaço
+                num_turmas = len(turmas_selecionadas)
+                num_cols = min(3, num_turmas)  # Máximo 3 colunas
+                cols = st.columns(num_cols)
+                
+                for idx, turma in enumerate(turmas_selecionadas):
+                    with cols[idx % num_cols]:
+                        carga_turma = st.number_input(
+                            f"{turma}",
+                            min_value=1,
+                            max_value=10,
+                            value=carga_padrao,
+                            key=f"carga_nova_{turma}_{disc.id if 'disc' in locals() else ''}",
+                            help=f"Aulas semanais de {nome or 'disciplina'} para {turma}"
+                        )
+                        carga_por_turma_temp[turma] = carga_turma
+            else:
+                carga_por_turma_temp = {}
+            
+            # NOVO v6: Atribuir professor por turma
+            professor_por_turma_temp = {}
             if nome and turmas_selecionadas:
-                st.subheader("👨‍🏫 Professores Disponíveis")
+                st.divider()
+                st.write("### 👨‍🏫 Atribuir Professor por Turma")
+                st.caption("OPCIONAL: Escolha o professor específico para cada turma. Se não selecionar, o algoritmo escolherá automaticamente.")
                 
-                # Determinar grupo para filtragem
-                grupo_filtro_prof = grupo
-                
-                professores_disponiveis = []
+                # Obter professores que ministram esta disciplina
+                professores_da_disciplina = []
                 for prof in st.session_state.professores:
-                    # Verificar se professor ministra alguma disciplina
-                    # (não podemos verificar ainda se ministra esta disciplina específica)
                     prof_grupo = obter_grupo_seguro(prof)
-                    if prof_grupo in [grupo_filtro_prof, "AMBOS"]:
-                        professores_disponiveis.append(prof)
+                    if prof_grupo in [grupo, "AMBOS"]:
+                        # Verificar se professor ministra esta disciplina (caso já tenha sido adicionado)
+                        # Como estamos criando, verificamos se ele PODE ministrar (será configurado depois)
+                        professores_da_disciplina.append(prof)
                 
-                if professores_disponiveis:
-                    st.write(f"**{len(professores_disponiveis)} professores disponíveis no grupo {grupo}:**")
-                    for prof in professores_disponiveis[:5]:  # Mostrar apenas 5
-                        st.write(f"- {prof.nome} ({obter_segmento_professor(prof)})")
-                    if len(professores_disponiveis) > 5:
-                        st.write(f"... e mais {len(professores_disponiveis) - 5}")
+                if professores_da_disciplina:
+                    # Mostrar em colunas
+                    num_cols_prof = min(2, len(turmas_selecionadas))
+                    cols_prof = st.columns(num_cols_prof)
+                    
+                    for idx, turma in enumerate(turmas_selecionadas):
+                        with cols_prof[idx % num_cols_prof]:
+                            opcoes_prof = ["(Escolher automaticamente)"] + [p.nome for p in professores_da_disciplina]
+                            prof_selecionado = st.selectbox(
+                                f"Professor para {turma}",
+                                options=opcoes_prof,
+                                key=f"prof_nova_{turma}",
+                                help=f"Selecione o professor que ministrará {nome or 'disciplina'} para {turma}"
+                            )
+                            
+                            if prof_selecionado != "(Escolher automaticamente)":
+                                professor_por_turma_temp[turma] = prof_selecionado
+                    
+                    # Mostrar resumo se houver atribuições
+                    if professor_por_turma_temp:
+                        st.info(f"✅ {len(professor_por_turma_temp)} turma(s) com professor pré-atribuído")
                 else:
-                    st.warning(f"⚠️ Nenhum professor disponível no grupo {grupo}")
+                    st.warning(f"⚠️ Nenhum professor disponível no grupo {grupo}. Adicione professores primeiro.")
             
             if st.form_submit_button("✅ Adicionar Disciplina"):
                 if nome and turmas_selecionadas:
                     try:
                         nova_disciplina = Disciplina(
-                            nome, carga, tipo, turmas_selecionadas, grupo, cor_fundo, cor_fonte
+                            nome=nome,
+                            carga_semanal=carga_padrao,  # Mantido para compatibilidade
+                            tipo=tipo,
+                            turmas=turmas_selecionadas,
+                            grupo=grupo,
+                            cor_fundo=cor_fundo,
+                            cor_fonte=cor_fonte,
+                            carga_por_turma=carga_por_turma_temp,  # v5
+                            professor_por_turma=professor_por_turma_temp  # v6 NOVO!
                         )
                         st.session_state.disciplinas.append(nova_disciplina)
                         if salvar_tudo():
-                            st.success(f"✅ Disciplina '{nome}' adicionada!")
+                            # Calcular total de aulas
+                            total_aulas = sum(carga_por_turma_temp.values())
+                            msg = f"✅ Disciplina '{nome}' adicionada! Total: {total_aulas} aulas ({len(turmas_selecionadas)} turmas)"
+                            if professor_por_turma_temp:
+                                msg += f" | {len(professor_por_turma_temp)} turma(s) com professor pré-atribuído"
+                            st.success(msg)
                         st.rerun()
                     except Exception as e:
                         st.error(f"❌ Erro ao adicionar disciplina: {str(e)}")
@@ -1532,15 +1606,46 @@ with abas[1]:
         st.info("📝 Nenhuma disciplina cadastrada.")
     
     for disc in disciplinas_exibir:
-        with st.expander(f"📖 {disc.nome} [{obter_grupo_seguro(disc)}] - Carga: {disc.carga_semanal}h", expanded=False):
+        # Calcular total de aulas
+        if hasattr(disc, 'carga_por_turma') and disc.carga_por_turma:
+            total_aulas = sum(disc.carga_por_turma.values())
+            carga_display = f"{total_aulas}h total"
+        else:
+            total_aulas = disc.carga_semanal * len(disc.turmas)
+            carga_display = f"{disc.carga_semanal}h/turma"
+        
+        with st.expander(f"📖 {disc.nome} [{obter_grupo_seguro(disc)}] - {carga_display} ({len(disc.turmas)} turmas)", expanded=False):
+            
+            # Mostrar carga por turma (se disponível)
+            if hasattr(disc, 'carga_por_turma') and disc.carga_por_turma:
+                st.write("**📊 Carga por Turma:**")
+                carga_info_cols = st.columns(4)
+                for idx, (turma, carga) in enumerate(sorted(disc.carga_por_turma.items())):
+                    with carga_info_cols[idx % 4]:
+                        # Verificar se tem professor atribuído
+                        prof_atribuido = ""
+                        if hasattr(disc, 'professor_por_turma') and disc.professor_por_turma and turma in disc.professor_por_turma:
+                            prof_atribuido = f" (Prof. {disc.professor_por_turma[turma]})"
+                        st.caption(f"{turma}: **{carga}h**{prof_atribuido}")
+            
+            # Mostrar professores atribuídos (resumo)
+            if hasattr(disc, 'professor_por_turma') and disc.professor_por_turma:
+                st.info(f"👨‍🏫 **{len(disc.professor_por_turma)} turma(s) com professor pré-atribuído**")
             
             # SEÇÃO 1: INFORMAÇÕES DA DISCIPLINA
-            st.write("### 📋 Informações da Disciplina")
+            st.divider()
+            st.write("### 📋 Editar Disciplina")
             with st.form(f"edit_disc_{disc.id}"):
                 col1, col2 = st.columns(2)
                 with col1:
                     novo_nome = st.text_input("Nome", disc.nome, key=f"nome_{disc.id}")
-                    nova_carga = st.number_input("Carga Semanal", 1, 10, disc.carga_semanal, key=f"carga_{disc.id}")
+                    nova_carga_padrao = st.number_input(
+                        "Carga Padrão", 
+                        1, 10, 
+                        disc.carga_semanal, 
+                        key=f"carga_{disc.id}",
+                        help="Carga padrão para novas turmas"
+                    )
                     novo_tipo = st.selectbox(
                         "Tipo", 
                         ["pesada", "media", "leve", "pratica"],
@@ -1564,21 +1669,119 @@ with abas[1]:
                     nova_cor_fundo = st.color_picker("Cor de Fundo", disc.cor_fundo, key=f"cor_fundo_{disc.id}")
                     nova_cor_fonte = st.color_picker("Cor da Fonte", disc.cor_fonte, key=f"cor_fonte_{disc.id}")
                 
+                # NOVO: Editar carga por turma
+                if turmas_selecionadas:
+                    st.divider()
+                    st.write("### 📊 Carga Horária Individual por Turma")
+                    
+                    nova_carga_por_turma = {}
+                    
+                    # Obter carga atual ou usar padrão
+                    carga_atual_dict = {}
+                    if hasattr(disc, 'carga_por_turma') and disc.carga_por_turma:
+                        carga_atual_dict = disc.carga_por_turma
+                    
+                    num_turmas = len(turmas_selecionadas)
+                    num_cols = min(3, num_turmas)
+                    cols = st.columns(num_cols)
+                    
+                    for idx, turma in enumerate(turmas_selecionadas):
+                        with cols[idx % num_cols]:
+                            valor_atual = carga_atual_dict.get(turma, nova_carga_padrao)
+                            carga_turma = st.number_input(
+                                f"{turma}",
+                                min_value=1,
+                                max_value=10,
+                                value=valor_atual,
+                                key=f"edit_carga_{disc.id}_{turma}",
+                                help=f"Aulas semanais para {turma}"
+                            )
+                            nova_carga_por_turma[turma] = carga_turma
+                    
+                    # Mostrar total
+                    total_novo = sum(nova_carga_por_turma.values())
+                    st.info(f"**Total de aulas:** {total_novo}h ({len(turmas_selecionadas)} turmas)")
+                    
+                    # NOVO v6: Editar professor por turma
+                    st.divider()
+                    st.write("### 👨‍🏫 Atribuir Professor por Turma")
+                    st.caption("OPCIONAL: Escolha o professor específico para cada turma.")
+                    
+                    nova_professor_por_turma = {}
+                    
+                    # Obter atribuições atuais
+                    prof_atual_dict = {}
+                    if hasattr(disc, 'professor_por_turma') and disc.professor_por_turma:
+                        prof_atual_dict = disc.professor_por_turma
+                    
+                    # Obter professores disponíveis
+                    professores_disponiveis = []
+                    for prof in st.session_state.professores:
+                        prof_grupo = obter_grupo_seguro(prof)
+                        if prof_grupo in [novo_grupo, "AMBOS"]:
+                            professores_disponiveis.append(prof)
+                    
+                    if professores_disponiveis:
+                        num_cols_prof = min(2, len(turmas_selecionadas))
+                        cols_prof = st.columns(num_cols_prof)
+                        
+                        for idx, turma in enumerate(turmas_selecionadas):
+                            with cols_prof[idx % num_cols_prof]:
+                                opcoes_prof = ["(Escolher automaticamente)"] + [p.nome for p in professores_disponiveis]
+                                
+                                # Determinar valor atual
+                                prof_atual = prof_atual_dict.get(turma, None)
+                                index_atual = 0
+                                if prof_atual and prof_atual in [p.nome for p in professores_disponiveis]:
+                                    index_atual = opcoes_prof.index(prof_atual)
+                                
+                                prof_selecionado = st.selectbox(
+                                    f"Professor para {turma}",
+                                    options=opcoes_prof,
+                                    index=index_atual,
+                                    key=f"edit_prof_{disc.id}_{turma}",
+                                    help=f"Professor para ministrar {novo_nome} em {turma}"
+                                )
+                                
+                                if prof_selecionado != "(Escolher automaticamente)":
+                                    nova_professor_por_turma[turma] = prof_selecionado
+                        
+                        if nova_professor_por_turma:
+                            st.info(f"✅ {len(nova_professor_por_turma)} turma(s) com professor pré-atribuído")
+                    else:
+                        st.warning(f"⚠️ Nenhum professor disponível no grupo {novo_grupo}")
+                
                 col1, col2 = st.columns(2)
                 with col1:
                     if st.form_submit_button("💾 Salvar Alterações"):
                         if novo_nome and turmas_selecionadas:
                             try:
                                 disc.nome = novo_nome
-                                disc.carga_semanal = nova_carga
+                                disc.carga_semanal = nova_carga_padrao
                                 disc.tipo = novo_tipo
                                 disc.turmas = turmas_selecionadas
                                 disc.grupo = novo_grupo
                                 disc.cor_fundo = nova_cor_fundo
                                 disc.cor_fonte = nova_cor_fonte
                                 
+                                # v5: Salvar carga por turma
+                                if hasattr(disc, 'carga_por_turma'):
+                                    disc.carga_por_turma = nova_carga_por_turma
+                                else:
+                                    disc.carga_por_turma = nova_carga_por_turma
+                                
+                                # v6: Salvar professor por turma
+                                if hasattr(disc, 'professor_por_turma'):
+                                    disc.professor_por_turma = nova_professor_por_turma
+                                else:
+                                    disc.professor_por_turma = nova_professor_por_turma
+                                
                                 if salvar_tudo():
-                                    st.success("✅ Disciplina atualizada!")
+                                    total_salvo = sum(nova_carga_por_turma.values())
+                                    msg = f"✅ Disciplina atualizada! Total: {total_salvo}h"
+                                    if nova_professor_por_turma:
+                                        msg += f" | {len(nova_professor_por_turma)} turma(s) com professor pré-atribuído"
+                                    st.success(msg)
                                 st.rerun()
                             except Exception as e:
                                 st.error(f"❌ Erro ao atualizar: {str(e)}")
@@ -1701,22 +1904,41 @@ with abas[2]:
                 nome = st.text_input("Nome do Professor*")
                 disciplinas = st.multiselect("Disciplinas*", disc_nomes)
                 grupo = st.selectbox("Grupo*", ["A", "B", "AMBOS"])
+                
+                # NOVO: Carga horária individual
+                carga_horaria_maxima = st.number_input(
+                    "Carga Horária Máxima (aulas/semana)*",
+                    min_value=1,
+                    max_value=50,
+                    value=35,
+                    help="Quantidade máxima de aulas que este professor pode ministrar por semana"
+                )
+                
             with col2:
                 disponibilidade = st.multiselect("Dias Disponíveis*", DIAS_SEMANA, default=DIAS_SEMANA)
-                st.write("**Horários Indisponíveis:**")
                 
-                horarios_indisponiveis = []
-                for dia in DIAS_SEMANA:
-                    with st.container():
-                        st.write(f"**{dia.upper()}:**")
-                        horarios_cols = st.columns(4)
-                        horarios_todos = list(range(1, 8))
-                        for i, horario in enumerate(horarios_todos):
-                            with horarios_cols[i % 4]:
-                                if st.checkbox(f"{horario}º", key=f"add_{dia}_{horario}"):
-                                    horarios_indisponiveis.append(f"{dia}_{horario}")
+                # NOVO: Observações/Restrições
+                observacoes = st.text_area(
+                    "Observações / Restrições Especiais",
+                    placeholder="Ex: Análises Historiográficas devem bater com 1º e 2º EM B",
+                    help="Anote aqui qualquer restrição ou preferência específica deste professor"
+                )
+                
+            st.write("**Horários Indisponíveis:**")
+            st.caption("Marque os períodos em que este professor NÃO pode dar aula")
             
-            # Mostrar limites de horas baseado nas disciplinas
+            horarios_indisponiveis = []
+            for dia in DIAS_SEMANA:
+                with st.container():
+                    st.write(f"**{dia.upper()}:**")
+                    horarios_cols = st.columns(7)
+                    horarios_todos = list(range(1, 8))
+                    for i, horario in enumerate(horarios_todos):
+                        with horarios_cols[i]:
+                            if st.checkbox(f"{horario}º", key=f"add_{dia}_{horario}"):
+                                horarios_indisponiveis.append(f"{dia}_{horario}")
+            
+            # Mostrar limites sugeridos baseado nas disciplinas
             if disciplinas:
                 # Determinar segmento do professor
                 segmento = "AMBOS"
@@ -1735,15 +1957,15 @@ with abas[2]:
                 
                 if tem_efii and not tem_em:
                     segmento = "EF_II"
-                    limite = LIMITE_HORAS_EFII
+                    limite_sugerido = LIMITE_HORAS_EFII
                 elif tem_em and not tem_efii:
                     segmento = "EM"
-                    limite = LIMITE_HORAS_EM
+                    limite_sugerido = LIMITE_HORAS_EM
                 else:
                     segmento = "AMBOS"
-                    limite = LIMITE_HORAS_EM  # Usar limite maior
+                    limite_sugerido = LIMITE_HORAS_EM
                 
-                st.info(f"💡 Este professor será do segmento **{segmento}** com limite de **{limite}h** semanais")
+                st.info(f"💡 Segmento detectado: **{segmento}** | Limite sugerido: **{limite_sugerido}h** | Você definiu: **{carga_horaria_maxima}h**")
             
             if st.form_submit_button("✅ Adicionar Professor"):
                 if nome and disciplinas and disponibilidade:
@@ -1751,15 +1973,17 @@ with abas[2]:
                         disponibilidade_completa = converter_disponibilidade_para_completo(disponibilidade)
                         
                         novo_professor = Professor(
-                            nome, 
-                            disciplinas, 
-                            disponibilidade_completa,
-                            grupo,
-                            horarios_indisponiveis
+                            nome=nome,
+                            disciplinas=disciplinas,
+                            disponibilidade=disponibilidade_completa,
+                            grupo=grupo,
+                            horarios_indisponiveis=horarios_indisponiveis,
+                            carga_horaria_maxima=carga_horaria_maxima,
+                            observacoes=observacoes
                         )
                         st.session_state.professores.append(novo_professor)
                         if salvar_tudo():
-                            st.success(f"✅ Professor '{nome}' adicionado!")
+                            st.success(f"✅ Professor '{nome}' adicionado com carga máxima de {carga_horaria_maxima}h!")
                         st.rerun()
                     except Exception as e:
                         st.error(f"❌ Erro ao adicionar professor: {str(e)}")
@@ -1790,13 +2014,21 @@ with abas[2]:
                 carga_atual = calcular_horas_professor(prof, st.session_state.aulas)
             
             # Mostrar informações
-            col1, col2, col3 = st.columns(3)
+            col1, col2, col3, col4 = st.columns(4)
             with col1:
                 st.metric("Segmento", segmento)
             with col2:
-                st.metric("Carga Atual", f"{carga_atual}/{limite}h")
+                # Usar carga individual se disponível
+                limite_exibir = prof.carga_horaria_maxima if hasattr(prof, 'carga_horaria_maxima') else limite
+                st.metric("Carga Atual", f"{carga_atual}/{limite_exibir}h")
             with col3:
                 st.metric("Disponibilidade", f"{disponibilidade_horas} períodos")
+            with col4:
+                st.metric("Carga Máxima", f"{limite_exibir}h")
+            
+            # Mostrar observações se existirem
+            if hasattr(prof, 'observacoes') and prof.observacoes:
+                st.info(f"📌 **Observações:** {prof.observacoes}")
             
             with st.form(f"edit_prof_{prof.id}"):
                 col1, col2 = st.columns(2)
@@ -1814,6 +2046,17 @@ with abas[2]:
                         index=["A", "B", "AMBOS"].index(obter_grupo_seguro(prof)),
                         key=f"grupo_prof_{prof.id}"
                     )
+                    
+                    # NOVO: Campo de carga horária individual
+                    nova_carga_maxima = st.number_input(
+                        "Carga Horária Máxima (aulas/semana)",
+                        min_value=1,
+                        max_value=50,
+                        value=prof.carga_horaria_maxima if hasattr(prof, 'carga_horaria_maxima') else limite,
+                        key=f"carga_prof_{prof.id}",
+                        help="Quantidade máxima de aulas que este professor pode ministrar por semana"
+                    )
+                    
                 with col2:
                     disponibilidade_convertida = converter_disponibilidade_para_semana(prof.disponibilidade)
                     
@@ -1824,27 +2067,35 @@ with abas[2]:
                         key=f"disp_prof_{prof.id}"
                     )
                     
-                    st.write("**Horários Indisponíveis:**")
-                    novos_horarios_indisponiveis = []
-                    horarios_todos = list(range(1, 8))
-                    for dia in DIAS_SEMANA:
-                        with st.container():
-                            st.write(f"**{dia.upper()}:**")
-                            horarios_cols = st.columns(4)
-                            for i, horario in enumerate(horarios_todos):
-                                with horarios_cols[i % 4]:
-                                    checked = False
-                                    horario_str = f"{dia}_{horario}"
-                                    if hasattr(prof, 'horarios_indisponiveis'):
-                                        if isinstance(prof.horarios_indisponiveis, (list, set)):
-                                            checked = horario_str in prof.horarios_indisponiveis
-                                    
-                                    if st.checkbox(
-                                        f"{horario}º", 
-                                        value=checked,
-                                        key=f"edit_{prof.id}_{dia}_{horario}"
-                                    ):
-                                        novos_horarios_indisponiveis.append(horario_str)
+                    # NOVO: Campo de observações
+                    novas_observacoes = st.text_area(
+                        "Observações / Restrições Especiais",
+                        value=prof.observacoes if hasattr(prof, 'observacoes') else "",
+                        placeholder="Ex: Análises Historiográficas devem bater com 1º e 2º EM B",
+                        key=f"obs_prof_{prof.id}"
+                    )
+                    
+                st.write("**Horários Indisponíveis:**")
+                novos_horarios_indisponiveis = []
+                horarios_todos = list(range(1, 8))
+                for dia in DIAS_SEMANA:
+                    with st.container():
+                        st.write(f"**{dia.upper()}:**")
+                        horarios_cols = st.columns(7)
+                        for i, horario in enumerate(horarios_todos):
+                            with horarios_cols[i]:
+                                checked = False
+                                horario_str = f"{dia}_{horario}"
+                                if hasattr(prof, 'horarios_indisponiveis'):
+                                    if isinstance(prof.horarios_indisponiveis, (list, set)):
+                                        checked = horario_str in prof.horarios_indisponiveis
+                                
+                                if st.checkbox(
+                                    f"{horario}º", 
+                                    value=checked,
+                                    key=f"edit_{prof.id}_{dia}_{horario}"
+                                ):
+                                    novos_horarios_indisponiveis.append(horario_str)
                 
                 # Mostrar novo segmento se disciplinas mudarem
                 if novas_disciplinas != disciplinas_validas:
@@ -1888,8 +2139,12 @@ with abas[2]:
                                 prof.disponibilidade = disponibilidade_completa
                                 prof.horarios_indisponiveis = novos_horarios_indisponiveis
                                 
+                                # NOVO: Salvar carga horária individual e observações
+                                prof.carga_horaria_maxima = nova_carga_maxima
+                                prof.observacoes = novas_observacoes
+                                
                                 if salvar_tudo():
-                                    st.success("✅ Professor atualizado!")
+                                    st.success(f"✅ Professor atualizado! Carga máxima: {nova_carga_maxima}h")
                                 st.rerun()
                             except Exception as e:
                                 st.error(f"❌ Erro ao atualizar: {str(e)}")
@@ -2830,9 +3085,296 @@ with abas[6]:
                 st.dataframe(df_professor, width='stretch')
 
 # ============================================
-# ABA DIAGNÓSTICO (melhorado com limites)
+# ABA VERSÕES DE GRADES
 # ============================================
 with abas[7]:
+    st.header("📦 GERENCIADOR DE VERSÕES DE GRADES")
+    
+    st.info("""
+    **💡 Por que usar múltiplas versões?**
+    
+    - 🤝 **Negociação com professores**: Quando há limitações horárias, tenha opções salvas para discutir
+    - 🔄 **Comparação**: Avalie diferentes configurações lado a lado
+    - 💾 **Backup**: Salve versões antes de fazer alterações
+    - 📊 **Histórico**: Mantenha registro de todas as tentativas
+    """)
+    
+    # Inicializar grades_salvas se não existir
+    if not hasattr(st.session_state, 'grades_salvas'):
+        st.session_state.grades_salvas = {}
+    
+    # Seção de salvar grade atual
+    st.subheader("💾 Salvar Grade Atual")
+    
+    if st.session_state.get('aulas'):
+        col1, col2 = st.columns([3, 1])
+        
+        with col1:
+            nome_nova_grade = st.text_input(
+                "Nome da versão:",
+                value=f"Grade_{datetime.now().strftime('%Y%m%d_%H%M')}",
+                help="Dê um nome descritivo para esta versão (ex: 'Grade_NegociacaoProf_Maria', 'Versao_Final')"
+            )
+        
+        with col2:
+            st.write("")
+            st.write("")
+            if st.button("💾 SALVAR VERSÃO", type="primary", use_container_width=True):
+                # Calcular informações da grade
+                aulas = st.session_state.aulas
+                
+                # Converter para dicionários
+                aulas_dict = []
+                for aula in aulas:
+                    if isinstance(aula, Aula):
+                        aulas_dict.append({
+                            'turma': aula.turma,
+                            'disciplina': aula.disciplina,
+                            'professor': aula.professor,
+                            'dia': aula.dia,
+                            'horario': aula.horario,
+                            'segmento': aula.segmento if hasattr(aula, 'segmento') else obter_segmento_turma(aula.turma)
+                        })
+                    elif isinstance(aula, dict):
+                        aulas_dict.append(aula)
+                
+                # Calcular estatísticas
+                total_aulas = len(aulas_dict)
+                
+                # Completude
+                total_necessario = 0
+                for turma in st.session_state.turmas:
+                    grupo_turma = turma.grupo
+                    for disc in st.session_state.disciplinas:
+                        if turma.nome in disc.turmas and obter_grupo_seguro(disc) == grupo_turma:
+                            total_necessario += disc.carga_semanal
+                
+                completude = round((total_aulas / total_necessario * 100), 1) if total_necessario > 0 else 0
+                
+                # Verificar conflitos
+                conflitos = verificar_conflitos_horarios(aulas)
+                limites_excedidos = verificar_limites_professores(aulas)
+                
+                # Salvar grade
+                st.session_state.grades_salvas[nome_nova_grade] = {
+                    'aulas': aulas_dict,
+                    'data': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                    'total_aulas': total_aulas,
+                    'total_necessario': total_necessario,
+                    'completude': completude,
+                    'conflitos': len(conflitos),
+                    'limites_excedidos': len(limites_excedidos),
+                    'turmas': list(set([a['turma'] for a in aulas_dict])),
+                    'professores': list(set([a['professor'] for a in aulas_dict]))
+                }
+                
+                st.success(f"✅ Versão '{nome_nova_grade}' salva com sucesso!")
+                st.rerun()
+    else:
+        st.warning("⚠️ Nenhuma grade gerada ainda. Vá para a aba 'Gerar Grade' primeiro.")
+    
+    st.divider()
+    
+    # Seção de grades salvas
+    st.subheader("📚 Versões Salvas")
+    
+    if st.session_state.grades_salvas:
+        st.write(f"**Total de versões:** {len(st.session_state.grades_salvas)}")
+        
+        # Opção de ordenação
+        col1, col2 = st.columns([2, 1])
+        with col1:
+            ordem = st.selectbox(
+                "Ordenar por:",
+                ["Data (mais recente)", "Data (mais antiga)", "Nome", "Completude (maior)", "Completude (menor)"]
+            )
+        
+        # Ordenar grades
+        grades_lista = list(st.session_state.grades_salvas.items())
+        
+        if ordem == "Data (mais recente)":
+            grades_lista.sort(key=lambda x: x[1]['data'], reverse=True)
+        elif ordem == "Data (mais antiga)":
+            grades_lista.sort(key=lambda x: x[1]['data'])
+        elif ordem == "Nome":
+            grades_lista.sort(key=lambda x: x[0])
+        elif ordem == "Completude (maior)":
+            grades_lista.sort(key=lambda x: x[1]['completude'], reverse=True)
+        elif ordem == "Completude (menor)":
+            grades_lista.sort(key=lambda x: x[1]['completude'])
+        
+        # Exibir grades
+        for nome_grade, dados_grade in grades_lista:
+            # Determinar cor do status
+            if dados_grade['completude'] == 100 and dados_grade['conflitos'] == 0 and dados_grade['limites_excedidos'] == 0:
+                status_icon = "✅"
+                status_cor = "green"
+            elif dados_grade['completude'] >= 90:
+                status_icon = "⚠️"
+                status_cor = "orange"
+            else:
+                status_icon = "❌"
+                status_cor = "red"
+            
+            with st.expander(f"{status_icon} **{nome_grade}** ({dados_grade['completude']:.1f}%)"):
+                col1, col2, col3 = st.columns(3)
+                
+                with col1:
+                    st.write("**📊 Informações Gerais**")
+                    st.write(f"📅 Data: {dados_grade['data']}")
+                    st.write(f"📚 Aulas: {dados_grade['total_aulas']}/{dados_grade['total_necessario']}")
+                    st.write(f"📈 Completude: {dados_grade['completude']:.1f}%")
+                
+                with col2:
+                    st.write("**⚠️ Problemas**")
+                    if dados_grade['conflitos'] > 0:
+                        st.write(f"❌ Conflitos: {dados_grade['conflitos']}")
+                    else:
+                        st.write("✅ Sem conflitos")
+                    
+                    if dados_grade['limites_excedidos'] > 0:
+                        st.write(f"❌ Limites excedidos: {dados_grade['limites_excedidos']}")
+                    else:
+                        st.write("✅ Limites OK")
+                
+                with col3:
+                    st.write("**📋 Resumo**")
+                    st.write(f"🎒 Turmas: {len(dados_grade['turmas'])}")
+                    st.write(f"👨‍🏫 Professores: {len(dados_grade['professores'])}")
+                
+                st.divider()
+                
+                # Ações
+                col1, col2, col3 = st.columns(3)
+                
+                with col1:
+                    if st.button(f"📂 Carregar", key=f"load_{nome_grade}", use_container_width=True):
+                        # Converter de volta para objetos Aula
+                        aulas_carregadas = []
+                        for aula_dict in dados_grade['aulas']:
+                            aula = Aula(
+                                turma=aula_dict['turma'],
+                                disciplina=aula_dict['disciplina'],
+                                professor=aula_dict['professor'],
+                                dia=aula_dict['dia'],
+                                horario=aula_dict['horario'],
+                                segmento=aula_dict['segmento']
+                            )
+                            aulas_carregadas.append(aula)
+                        
+                        st.session_state.aulas = aulas_carregadas
+                        st.success(f"✅ Grade '{nome_grade}' carregada! Vá para 'Gerar Grade' para visualizar.")
+                        st.rerun()
+                
+                with col2:
+                    # Baixar como Excel
+                    df = pd.DataFrame(dados_grade['aulas'])
+                    output = io.BytesIO()
+                    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+                        df.to_excel(writer, sheet_name='Grade', index=False)
+                    
+                    st.download_button(
+                        "📥 Excel",
+                        output.getvalue(),
+                        f"{nome_grade}.xlsx",
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        key=f"download_{nome_grade}",
+                        use_container_width=True
+                    )
+                
+                with col3:
+                    if st.button(f"🗑️ Excluir", key=f"delete_{nome_grade}", use_container_width=True):
+                        del st.session_state.grades_salvas[nome_grade]
+                        st.success(f"✅ Versão '{nome_grade}' excluída!")
+                        st.rerun()
+        
+        st.divider()
+        
+        # Comparação entre versões
+        if len(st.session_state.grades_salvas) >= 2:
+            st.subheader("🔄 Comparar Versões")
+            
+            nomes_grades = list(st.session_state.grades_salvas.keys())
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                grade1 = st.selectbox("Versão 1:", nomes_grades, key="compare1")
+            with col2:
+                grade2 = st.selectbox("Versão 2:", [g for g in nomes_grades if g != grade1], key="compare2")
+            
+            if st.button("📊 Comparar", use_container_width=True):
+                dados1 = st.session_state.grades_salvas[grade1]
+                dados2 = st.session_state.grades_salvas[grade2]
+                
+                st.write("### Comparação")
+                
+                df_comparacao = pd.DataFrame({
+                    'Métrica': ['Total de Aulas', 'Completude (%)', 'Conflitos', 'Limites Excedidos', 'Turmas', 'Professores'],
+                    grade1: [
+                        dados1['total_aulas'],
+                        f"{dados1['completude']:.1f}%",
+                        dados1['conflitos'],
+                        dados1['limites_excedidos'],
+                        len(dados1['turmas']),
+                        len(dados1['professores'])
+                    ],
+                    grade2: [
+                        dados2['total_aulas'],
+                        f"{dados2['completude']:.1f}%",
+                        dados2['conflitos'],
+                        dados2['limites_excedidos'],
+                        len(dados2['turmas']),
+                        len(dados2['professores'])
+                    ]
+                })
+                
+                st.dataframe(df_comparacao, use_container_width=True)
+                
+                # Análise de diferenças
+                st.write("### 📈 Análise")
+                
+                if dados1['completude'] > dados2['completude']:
+                    st.write(f"✅ **{grade1}** tem maior completude (+{dados1['completude'] - dados2['completude']:.1f}%)")
+                elif dados2['completude'] > dados1['completude']:
+                    st.write(f"✅ **{grade2}** tem maior completude (+{dados2['completude'] - dados1['completude']:.1f}%)")
+                else:
+                    st.write("⚖️ Ambas têm a mesma completude")
+                
+                if dados1['conflitos'] < dados2['conflitos']:
+                    st.write(f"✅ **{grade1}** tem menos conflitos")
+                elif dados2['conflitos'] < dados1['conflitos']:
+                    st.write(f"✅ **{grade2}** tem menos conflitos")
+                
+                if dados1['limites_excedidos'] < dados2['limites_excedidos']:
+                    st.write(f"✅ **{grade1}** respeita melhor os limites")
+                elif dados2['limites_excedidos'] < dados1['limites_excedidos']:
+                    st.write(f"✅ **{grade2}** respeita melhor os limites")
+    else:
+        st.info("📭 Nenhuma versão salva ainda. Salve sua primeira grade acima!")
+    
+    st.divider()
+    
+    # Ações em lote
+    if st.session_state.grades_salvas:
+        st.subheader("⚙️ Ações em Lote")
+        
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            if st.button("📥 Exportar Todas (ZIP)", use_container_width=True):
+                st.info("🚧 Funcionalidade em desenvolvimento. Por enquanto, baixe cada versão individualmente.")
+        
+        with col2:
+            if st.button("🗑️ Excluir Todas", use_container_width=True, type="secondary"):
+                if st.button("⚠️ CONFIRMAR EXCLUSÃO DE TODAS", type="secondary"):
+                    st.session_state.grades_salvas = {}
+                    st.success("✅ Todas as versões foram excluídas!")
+                    st.rerun()
+
+# ============================================
+# ABA DIAGNÓSTICO (melhorado com limites)
+# ============================================
+with abas[8]:
     st.header("🔧 DIAGNÓSTICO AVANÇADO DO SISTEMA")
     
     st.subheader("📊 Análise de Capacidade")
