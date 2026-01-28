@@ -1,9 +1,10 @@
 import streamlit as st
 import random
 from datetime import datetime
+from collections import defaultdict
 
 class SimpleGradeHoraria:
-    """Algoritmo simples para geração de grade horária"""
+    """Algoritmo otimizado para geração de grade horária com compactação máxima"""
     
     def __init__(self, turmas, professores, disciplinas, salas):
         self.turmas = turmas
@@ -15,240 +16,282 @@ class SimpleGradeHoraria:
     
     def _obter_horario_real(self, turma_nome, periodo):
         """Converte período da turma para horário real (hh:mm)"""
-        # Mapear períodos para horários reais
         if 'em' in turma_nome.lower():
             # Ensino Médio: 07:00-13:10
             horarios_em = {
-                1: "07:00",
-                2: "07:50",
-                3: "08:40",
-                4: "09:50",  # Após intervalo
-                5: "10:40",
-                6: "11:30",
-                7: "12:20"
+                1: "07:00", 2: "07:50", 3: "08:40",
+                4: "09:50", 5: "10:40", 6: "11:30", 7: "12:20"
             }
             return horarios_em.get(periodo, "00:00")
         else:
             # EF II: 07:50-12:20
             horarios_efii = {
-                1: "07:50",
-                2: "08:40",
-                3: "09:50",  # Após intervalo
-                4: "10:40",
-                5: "11:30"
+                1: "07:50", 2: "08:40", 3: "09:50",
+                4: "10:40", 5: "11:30"
             }
             return horarios_efii.get(periodo, "00:00")
     
     def gerar_grade(self):
-        """Gera uma grade horária simples SEM CONFLITOS de professores com HORÁRIOS COMPACTADOS"""
+        """Gera grade horária otimizada com compactação máxima e distribuição uniforme"""
         try:
-            st.info("🎯 Iniciando geração de grade horária (v3 - com compactação de horários)...")
+            st.info("🎯 Iniciando geração de grade horária otimizada (v4 - compactação máxima)...")
             
-            # Inicializar lista de aulas
+            # Inicializar estruturas
             aulas = []
+            # Rastrear ocupação de professores por (dia, horario_real)
+            # para evitar que um professor esteja em 2 lugares ao mesmo tempo
+            professores_ocupacao = {prof.nome: set() for prof in self.professores}
             
-            # Dicionário para rastrear ocupação de professores por HORÁRIO REAL
-            # {professor_nome: {(dia, "HH:MM")}}
-            professores_ocupacao = {}
-            for prof in self.professores:
-                professores_ocupacao[prof.nome] = set()
+            # Estatísticas para monitoramento
+            tentativas_por_turma = {}
             
-            # Ordenar turmas por dificuldade (EM primeiro - tem mais períodos e é mais restritivo)
-            turmas_ordenadas = sorted(self.turmas, key=lambda t: 1 if 'em' in t.nome.lower() else 0)
+            # Ordenar turmas: EM primeiro (mais restritivo), depois EF
+            turmas_ordenadas = sorted(self.turmas, 
+                                     key=lambda t: (0 if 'em' in t.nome.lower() else 1, t.nome))
+            
+            st.write(f"📚 Processando {len(turmas_ordenadas)} turmas...")
             
             # Para cada turma
-            for turma in turmas_ordenadas:
+            for idx_turma, turma in enumerate(turmas_ordenadas):
                 turma_nome = turma.nome
-                grupo_turma = turma.grupo
                 
-                # Determinar horários disponíveis para esta turma
+                # Determinar períodos disponíveis
                 if 'em' in turma_nome.lower():
-                    periodos = list(range(1, 8))  # 7 períodos para EM
+                    periodos = list(range(1, 8))  # 7 períodos
+                    limite_turma = 35
                 else:
-                    periodos = list(range(1, 6))  # 5 períodos para EF II
+                    periodos = list(range(1, 6))  # 5 períodos
+                    limite_turma = 25
                 
-                # Obter disciplinas desta turma com carga específica
+                # Obter disciplinas com carga específica
                 disciplinas_turma = []
                 for disc in self.disciplinas:
-                    if turma_nome in disc.turmas and self._obter_grupo(disc) == grupo_turma:
-                        # NOVO: Usar carga específica por turma se disponível
+                    if turma_nome in disc.turmas:
                         carga = disc.obter_carga_turma(turma_nome)
+                        
+                        # Obter professor pré-atribuído
+                        professor_atribuido = None
+                        if hasattr(disc, 'professor_por_turma') and turma_nome in disc.professor_por_turma:
+                            professor_atribuido = disc.professor_por_turma[turma_nome]
+                        
                         for _ in range(carga):
-                            disciplinas_turma.append(disc)
+                            disciplinas_turma.append({
+                                'disciplina': disc,
+                                'professor_atribuido': professor_atribuido
+                            })
                 
                 if not disciplinas_turma:
                     st.warning(f"⚠️ Turma {turma_nome} não tem disciplinas!")
                     continue
                 
-                # Embaralhar disciplinas para distribuição
-                random.shuffle(disciplinas_turma)
+                # ESTRATÉGIA 1: Agrupar disciplinas por professor para facilitar compactação
+                disciplinas_por_professor = defaultdict(list)
+                disciplinas_sem_professor = []
                 
-                # Criar grid de horários disponíveis para esta turma
-                horarios_turma_ocupados = set()
+                for item in disciplinas_turma:
+                    if item['professor_atribuido']:
+                        disciplinas_por_professor[item['professor_atribuido']].append(item)
+                    else:
+                        disciplinas_sem_professor.append(item)
                 
-                # Tentar alocar cada disciplina
-                for disciplina in disciplinas_turma:
-                    alocada = False
+                # ESTRATÉGIA 2: Distribuir uniformemente pelos dias
+                # Calcular quantas aulas por dia em média
+                total_aulas = len(disciplinas_turma)
+                aulas_por_dia_ideal = total_aulas / len(self.dias)
+                
+                # Criar grid de ocupação da turma
+                horarios_turma = {dia: set() for dia in self.dias}
+                
+                # ESTRATÉGIA 3: Alocar por professor (para compactar)
+                aulas_alocadas_turma = 0
+                tentativas = 0
+                max_tentativas = 1000
+                
+                # Ordenar professores por quantidade de aulas (maior primeiro)
+                professores_ordenados = sorted(
+                    disciplinas_por_professor.items(),
+                    key=lambda x: len(x[1]),
+                    reverse=True
+                )
+                
+                # Alocar disciplinas com professor atribuído
+                for professor_nome, items_prof in professores_ordenados:
+                    # Encontrar objeto professor
+                    prof_obj = next((p for p in self.professores if p.nome == professor_nome), None)
                     
-                    # Criar lista de todos os horários possíveis ORDENADA por período (para compactação)
-                    todos_horarios = [(dia, periodo) for dia in self.dias for periodo in periodos]
+                    if not prof_obj:
+                        st.warning(f"⚠️ Professor {professor_nome} não encontrado!")
+                        continue
                     
-                    # NOVO v6: Verificar se há professor pré-atribuído para esta turma
-                    professor_pre_atribuido = None
-                    if hasattr(disciplina, 'obter_professor_turma'):
-                        professor_pre_atribuido = disciplina.obter_professor_turma(turma_nome)
-                    
-                    # Tentar cada horário possível
-                    for dia, horario in todos_horarios:
-                        # 1. Verificar se turma já tem aula neste horário
-                        if (dia, horario) in horarios_turma_ocupados:
-                            continue
+                    # Alocar todas as aulas deste professor de uma vez
+                    for item in items_prof:
+                        alocada = False
                         
-                        # CONVERTER PERÍODO PARA HORÁRIO REAL
-                        horario_real = self._obter_horario_real(turma_nome, horario)
+                        # Estratégia: tentar dias com menos aulas primeiro (distribuição uniforme)
+                        dias_ordenados = sorted(self.dias, 
+                                               key=lambda d: len(horarios_turma[d]))
                         
-                        # 2. Encontrar professores DISPONÍVEIS para esta disciplina
-                        professores_candidatos = []
-                        
-                        # Se há professor pré-atribuído, usar apenas ele
-                        if professor_pre_atribuido:
-                            # Encontrar objeto professor
-                            for prof in self.professores:
-                                if prof.nome == professor_pre_atribuido:
-                                    # Verificar se está disponível neste horário
-                                    if prof.grupo in [grupo_turma, "AMBOS"]:
-                                        if dia in prof.disponibilidade:
-                                            if (dia, horario_real) not in professores_ocupacao[prof.nome]:
-                                                horario_str = f"{dia}_{horario}"
-                                                if hasattr(prof, 'horarios_indisponiveis'):
-                                                    if horario_str in prof.horarios_indisponiveis:
-                                                        continue
-                                                
-                                                carga_atual = self._contar_aulas_professor(prof.nome, aulas)
-                                                limite = self._obter_limite_professor(prof)
-                                                
-                                                if carga_atual < limite:
-                                                    professores_candidatos.append(prof)
-                                    break
-                        else:
-                            # Comportamento normal: buscar todos professores disponíveis
-                            for prof in self.professores:
-                                if disciplina.nome in prof.disciplinas:
-                                    if prof.grupo in [grupo_turma, "AMBOS"]:
-                                        # Verificar disponibilidade do dia
-                                        if dia in prof.disponibilidade:
-                                            # VERIFICAÇÃO CRÍTICA: Professor não pode estar ocupado neste HORÁRIO REAL
-                                            if (dia, horario_real) not in professores_ocupacao[prof.nome]:
-                                                # Verificar horários indisponíveis
-                                                horario_str = f"{dia}_{horario}"
-                                                if hasattr(prof, 'horarios_indisponiveis'):
-                                                    if horario_str in prof.horarios_indisponiveis:
-                                                        continue
-                                                
-                                                # Verificar limite de horas do professor (RIGOROSO)
-                                                carga_atual = self._contar_aulas_professor(prof.nome, aulas)
-                                                limite = self._obter_limite_professor(prof)
-                                                
-                                                if carga_atual < limite:
-                                                    professores_candidatos.append(prof)
-                        
-                        if not professores_candidatos:
-                            continue
-                        
-                        # PRIORIZAÇÃO PARA COMPACTAÇÃO MÁXIMA:
-                        # Se há professor pré-atribuído, usar ele diretamente
-                        if professor_pre_atribuido:
-                            professor_selecionado = professores_candidatos[0]  # Já é o único
-                        else:
-                            # Compactação normal
-                            professores_com_aulas_no_dia = []
-                            professores_sem_aulas_no_dia = []
+                        # Para cada dia
+                        for dia in dias_ordenados:
+                            # Verificar disponibilidade do professor no dia
+                            if dia not in prof_obj.disponibilidade:
+                                continue
                             
-                            for prof in professores_candidatos:
-                                # Contar aulas deste professor neste dia
-                                aulas_prof_dia = sum(1 for d, hr in professores_ocupacao[prof.nome] if d == dia)
+                            # Verificar se dia não está cheio
+                            if len(horarios_turma[dia]) >= len(periodos):
+                                continue
+                            
+                            # Tentar períodos em sequência (compactação)
+                            for periodo in periodos:
+                                if periodo in horarios_turma[dia]:
+                                    continue
                                 
-                                if aulas_prof_dia > 0:
-                                    # Já tem aulas no dia - priorizar para compactar
-                                    professores_com_aulas_no_dia.append((prof, aulas_prof_dia))
-                                else:
-                                    professores_sem_aulas_no_dia.append(prof)
+                                # Converter para horário real
+                                horario_real = self._obter_horario_real(turma_nome, periodo)
+                                
+                                # Verificar se professor já está ocupado neste horário
+                                if (dia, horario_real) in professores_ocupacao[professor_nome]:
+                                    continue
+                                
+                                # Verificar limite do professor
+                                carga_atual = self._contar_aulas_professor(professor_nome, aulas)
+                                limite_prof = self._obter_limite_professor(prof_obj)
+                                
+                                if carga_atual >= limite_prof:
+                                    break  # Professor está no limite
+                                
+                                # ALOCAR AULA
+                                aula = type('Aula', (), {})()
+                                aula.turma = turma_nome
+                                aula.disciplina = item['disciplina'].nome
+                                aula.professor = professor_nome
+                                aula.dia = dia
+                                aula.horario = periodo
+                                aula.segmento = 'EM' if 'em' in turma_nome.lower() else 'EF_II'
+                                
+                                aulas.append(aula)
+                                horarios_turma[dia].add(periodo)
+                                professores_ocupacao[professor_nome].add((dia, horario_real))
+                                
+                                alocada = True
+                                aulas_alocadas_turma += 1
+                                break
                             
-                            # Ordenar professores com aulas no dia por:
-                            # 1º) Maior quantidade de aulas no dia (evitar criar dias com 1 aula só)
-                            # 2º) Menor carga total
-                            professores_com_aulas_ordenados = sorted(
-                                professores_com_aulas_no_dia,
+                            if alocada:
+                                break
+                        
+                        if not alocada:
+                            st.warning(f"⚠️ Não foi possível alocar {item['disciplina'].nome} para {turma_nome} (professor {professor_nome})")
+                
+                # Alocar disciplinas sem professor atribuído
+                for item in disciplinas_sem_professor:
+                    alocada = False
+                    disc = item['disciplina']
+                    
+                    # Dias ordenados por ocupação
+                    dias_ordenados = sorted(self.dias, key=lambda d: len(horarios_turma[d]))
+                    
+                    for dia in dias_ordenados:
+                        if len(horarios_turma[dia]) >= len(periodos):
+                            continue
+                        
+                        for periodo in periodos:
+                            if periodo in horarios_turma[dia]:
+                                continue
+                            
+                            # Converter para horário real
+                            horario_real = self._obter_horario_real(turma_nome, periodo)
+                            
+                            # Buscar professores disponíveis
+                            professores_disponiveis = []
+                            
+                            for prof in self.professores:
+                                if disc.nome in prof.disciplinas:
+                                    if dia in prof.disponibilidade:
+                                        # Verificar se professor não está ocupado neste horário
+                                        if (dia, horario_real) not in professores_ocupacao[prof.nome]:
+                                            carga_atual = self._contar_aulas_professor(prof.nome, aulas)
+                                            limite_prof = self._obter_limite_professor(prof)
+                                            
+                                            if carga_atual < limite_prof:
+                                                # Contar aulas do professor neste dia (para compactação)
+                                                aulas_prof_dia = sum(1 for a in aulas 
+                                                                   if hasattr(a, 'professor') and a.professor == prof.nome 
+                                                                   and hasattr(a, 'dia') and a.dia == dia)
+                                                professores_disponiveis.append((prof, aulas_prof_dia))
+                            
+                            if not professores_disponiveis:
+                                continue
+                            
+                            # Priorizar professores que já têm aulas no dia (compactação)
+                            professores_ordenados = sorted(
+                                professores_disponiveis,
                                 key=lambda x: (-x[1], self._contar_aulas_professor(x[0].nome, aulas))
                             )
                             
-                            # Ordenar professores sem aulas por menor carga
-                            professores_sem_aulas_ordenados = sorted(
-                                professores_sem_aulas_no_dia,
-                                key=lambda p: self._contar_aulas_professor(p.nome, aulas)
-                            )
+                            prof_selecionado = professores_ordenados[0][0]
                             
-                            # Lista final: professores com aulas no dia primeiro
-                            professores_ordenados = [p[0] for p in professores_com_aulas_ordenados] + professores_sem_aulas_ordenados
+                            # ALOCAR AULA
+                            aula = type('Aula', (), {})()
+                            aula.turma = turma_nome
+                            aula.disciplina = disc.nome
+                            aula.professor = prof_selecionado.nome
+                            aula.dia = dia
+                            aula.horario = periodo
+                            aula.segmento = 'EM' if 'em' in turma_nome.lower() else 'EF_II'
                             
-                            # Selecionar o melhor professor
-                            professor_selecionado = professores_ordenados[0]
+                            aulas.append(aula)
+                            horarios_turma[dia].add(periodo)
+                            professores_ocupacao[prof_selecionado.nome].add((dia, horario_real))
+                            
+                            alocada = True
+                            aulas_alocadas_turma += 1
+                            break
                         
-                        # Criar aula
-                        aula = type('Aula', (), {})()
-                        aula.turma = turma_nome
-                        aula.disciplina = disciplina.nome
-                        aula.professor = professor_selecionado.nome
-                        aula.dia = dia
-                        aula.horario = horario
-                        aula.segmento = 'EM' if 'em' in turma_nome.lower() else 'EF_II'
-                        
-                        # Adicionar aula
-                        aulas.append(aula)
-                        
-                        # Marcar horário como ocupado
-                        # Para turma: usar período relativo
-                        horarios_turma_ocupados.add((dia, horario))
-                        # Para professor: usar HORÁRIO REAL
-                        professores_ocupacao[professor_selecionado.nome].add((dia, horario_real))
-                        
-                        alocada = True
-                        break
+                        if alocada:
+                            break
                     
                     if not alocada:
-                        st.warning(f"⚠️ Não foi possível alocar {disciplina.nome} para {turma_nome}")
+                        st.warning(f"⚠️ Não foi possível alocar {disc.nome} para {turma_nome}")
+                
+                # Verificar se turma foi completa
+                if aulas_alocadas_turma < total_aulas:
+                    st.warning(f"⚠️ Turma {turma_nome}: {aulas_alocadas_turma}/{total_aulas} aulas alocadas (faltam {total_aulas - aulas_alocadas_turma})")
+                else:
+                    # Verificar distribuição pelos dias
+                    distribuicao = {dia: len(periodos_dia) for dia, periodos_dia in horarios_turma.items()}
+                    dias_vazios = [dia for dia, count in distribuicao.items() if count == 0]
+                    
+                    if dias_vazios:
+                        st.warning(f"⚠️ Turma {turma_nome}: dias vazios - {', '.join(dias_vazios)}")
             
-            # VERIFICAÇÃO FINAL: Detectar conflitos residuais
+            # VERIFICAÇÃO FINAL
             conflitos_finais = self._verificar_conflitos_professores(aulas)
-            
-            # Verificar limites excedidos
             limites_excedidos = self._verificar_limites_excedidos(aulas)
-            
-            # NOVO: Verificar aulas isoladas
             aulas_isoladas = self._analisar_aulas_isoladas(aulas)
             
+            # Relatório final
             if conflitos_finais:
                 st.error(f"❌ ATENÇÃO: {len(conflitos_finais)} conflitos de professores detectados!")
-                for conflito in conflitos_finais[:3]:
+                for conflito in conflitos_finais[:5]:
                     st.write(f"  - {conflito}")
             
             if limites_excedidos:
                 st.error(f"❌ ATENÇÃO: {len(limites_excedidos)} professores excederam limite de horas!")
-                for exc in limites_excedidos[:3]:
+                for exc in limites_excedidos[:5]:
                     st.write(f"  - {exc}")
             
             if aulas_isoladas:
                 st.warning(f"⚠️ COMPACTAÇÃO: {len(aulas_isoladas)} professores com aulas isoladas (1 aula/dia)")
                 for alerta in aulas_isoladas[:5]:
                     dias_str = ", ".join(alerta['dias_isolados'])
-                    st.write(f"  - **{alerta['professor']}**: 1 aula isolada em {dias_str} ({alerta['total_aulas']}h em {alerta['total_dias']} dias)")
-                st.caption("💡 Aulas isoladas não são erros, mas podem ser desconfortáveis para o professor.")
+                    st.write(f"  - **{alerta['professor']}**: 1 aula isolada em {dias_str}")
             
             if not conflitos_finais and not limites_excedidos:
                 if aulas_isoladas:
-                    st.success(f"✅ Grade gerada com {len(aulas)} aulas SEM CONFLITOS e dentro dos LIMITES! (com alguns alertas de compactação)")
+                    st.success(f"✅ Grade gerada com {len(aulas)} aulas SEM CONFLITOS e dentro dos LIMITES!")
                 else:
-                    st.success(f"✅ Grade PERFEITA com {len(aulas)} aulas: SEM CONFLITOS, dentro dos LIMITES e TOTALMENTE COMPACTADA!")
+                    st.success(f"✅ Grade PERFEITA com {len(aulas)} aulas: SEM CONFLITOS, LIMITES OK e TOTALMENTE COMPACTADA!")
             
             return aulas
             
@@ -259,100 +302,50 @@ class SimpleGradeHoraria:
             return []
     
     def _obter_grupo(self, objeto):
-        """Obtém o grupo de um objeto de forma segura"""
-        try:
-            if hasattr(objeto, 'grupo'):
-                grupo = objeto.grupo
-                if grupo in ["A", "B", "AMBOS"]:
-                    return grupo
-            return "A"
-        except:
-            return "A"
+        """DEPRECATED: Compatibilidade"""
+        return None
     
     def _contar_aulas_professor(self, professor_nome, aulas):
         """Conta quantas aulas um professor já tem"""
-        count = 0
-        for aula in aulas:
-            if hasattr(aula, 'professor') and aula.professor == professor_nome:
-                count += 1
-        return count
+        return sum(1 for aula in aulas if hasattr(aula, 'professor') and aula.professor == professor_nome)
     
     def _obter_limite_professor(self, professor):
-        """Retorna o limite de horas do professor (individual ou baseado no segmento)"""
-        # PRIORIDADE 1: Usar carga_horaria_maxima individual se disponível
-        if hasattr(professor, 'carga_horaria_maxima') and professor.carga_horaria_maxima:
-            return professor.carga_horaria_maxima
+        """Retorna o limite de horas do professor"""
+        # Usar carga_horaria (que foi sincronizada do PDF)
+        if hasattr(professor, 'carga_horaria') and professor.carga_horaria:
+            return professor.carga_horaria
         
-        # PRIORIDADE 2: Calcular baseado no segmento (fallback para professores antigos)
-        # Determinar segmento do professor
-        tem_efii = False
-        tem_em = False
+        # Fallback: calcular por segmento
+        tem_em = any('em' in turma.lower() 
+                    for disc_nome in professor.disciplinas 
+                    for disc in self.disciplinas if disc.nome == disc_nome 
+                    for turma in disc.turmas)
         
-        for disc_nome in professor.disciplinas:
-            for disc in self.disciplinas:
-                if disc.nome == disc_nome:
-                    for turma_nome in disc.turmas:
-                        if 'em' in turma_nome.lower():
-                            tem_em = True
-                        else:
-                            tem_efii = True
-        
-        # Limites
-        LIMITE_HORAS_EFII = 25
-        LIMITE_HORAS_EM = 35
-        
-        if tem_efii and not tem_em:
-            return LIMITE_HORAS_EFII
-        elif tem_em and not tem_efii:
-            return LIMITE_HORAS_EM
-        else:
-            return LIMITE_HORAS_EM  # Usar limite maior para professores de ambos
+        return 35 if tem_em else 25
     
     def _verificar_conflitos_professores(self, aulas):
-        """Verifica se há professores em dois lugares ao mesmo tempo (usando horário real)"""
+        """Verifica se há professores em dois lugares ao mesmo tempo"""
         conflitos = []
-        
-        # Criar dicionário de professores por horário REAL
-        professores_por_horario = {}
+        professores_por_horario = defaultdict(list)
         
         for aula in aulas:
-            if not hasattr(aula, 'professor') or not hasattr(aula, 'dia') or not hasattr(aula, 'horario'):
+            if not all(hasattr(aula, attr) for attr in ['professor', 'dia', 'horario', 'turma']):
                 continue
             
-            if not hasattr(aula, 'turma'):
-                continue
-            
-            # Converter período para horário real
             horario_real = self._obter_horario_real(aula.turma, aula.horario)
-            
-            # Usar horário real na chave
             chave = f"{aula.professor}|{aula.dia}|{horario_real}"
-            
-            if chave not in professores_por_horario:
-                professores_por_horario[chave] = []
             
             professores_por_horario[chave].append({
                 'turma': aula.turma,
                 'disciplina': aula.disciplina if hasattr(aula, 'disciplina') else '?',
-                'periodo': aula.horario,
-                'segmento': aula.segmento if hasattr(aula, 'segmento') else '?'
+                'periodo': aula.horario
             })
         
-        # Detectar conflitos
         for chave, aulas_info in professores_por_horario.items():
             if len(aulas_info) > 1:
-                partes = chave.split('|')
-                professor = partes[0]
-                dia = partes[1]
-                horario_real = partes[2]
-                
-                detalhes = []
-                for info in aulas_info:
-                    detalhes.append(f"{info['turma']}({info['segmento']}-{info['periodo']}º)")
-                
-                conflitos.append(
-                    f"Professor {professor} em {' E '.join(detalhes)} no {dia} às {horario_real}"
-                )
+                professor, dia, horario_real = chave.split('|')
+                detalhes = [f"{info['turma']} ({info['disciplina']})" for info in aulas_info]
+                conflitos.append(f"Professor {professor} em {' E '.join(detalhes)} no {dia} às {horario_real}")
         
         return conflitos
     
@@ -365,61 +358,33 @@ class SimpleGradeHoraria:
             limite = self._obter_limite_professor(prof)
             
             if carga_atual > limite:
-                # Determinar segmento
-                tem_efii = False
-                tem_em = False
-                for disc_nome in prof.disciplinas:
-                    for disc in self.disciplinas:
-                        if disc.nome == disc_nome:
-                            for turma_nome in disc.turmas:
-                                if 'em' in turma_nome.lower():
-                                    tem_em = True
-                                else:
-                                    tem_efii = True
-                
-                if tem_efii and not tem_em:
-                    segmento = "EF_II"
-                elif tem_em and not tem_efii:
-                    segmento = "EM"
-                else:
-                    segmento = "AMBOS"
-                
                 excedidos.append(
-                    f"Professor {prof.nome} ({segmento}): {carga_atual}h alocadas (limite: {limite}h) - EXCESSO: {carga_atual - limite}h"
+                    f"Professor {prof.nome}: {carga_atual}h alocadas (limite: {limite}h) - EXCESSO: {carga_atual - limite}h"
                 )
         
         return excedidos
     
     def _analisar_aulas_isoladas(self, aulas):
-        """Analisa e reporta professores com aulas isoladas (1 aula apenas em um dia)"""
-        aulas_por_prof_dia = {}
+        """Analisa professores com aulas isoladas (1 aula/dia)"""
+        aulas_por_prof_dia = defaultdict(lambda: defaultdict(int))
         
-        for prof in self.professores:
-            aulas_por_prof_dia[prof.nome] = {}
-            for dia in self.dias:
-                aulas_por_prof_dia[prof.nome][dia] = 0
-        
-        # Contar aulas por professor por dia
         for aula in aulas:
             if hasattr(aula, 'professor') and hasattr(aula, 'dia'):
-                prof_nome = aula.professor
-                dia = aula.dia
-                if prof_nome in aulas_por_prof_dia and dia in aulas_por_prof_dia[prof_nome]:
-                    aulas_por_prof_dia[prof_nome][dia] += 1
+                aulas_por_prof_dia[aula.professor][aula.dia] += 1
         
-        # Detectar aulas isoladas
         alertas = []
         for prof_nome, dias_dict in aulas_por_prof_dia.items():
             dias_com_1_aula = [dia for dia, count in dias_dict.items() if count == 1]
-            dias_com_aulas = [dia for dia, count in dias_dict.items() if count > 0]
             
             if dias_com_1_aula:
                 total_aulas = sum(dias_dict.values())
+                total_dias = len([d for d, c in dias_dict.items() if c > 0])
+                
                 alertas.append({
                     'professor': prof_nome,
                     'dias_isolados': dias_com_1_aula,
                     'total_aulas': total_aulas,
-                    'total_dias': len(dias_com_aulas)
+                    'total_dias': total_dias
                 })
         
         return alertas

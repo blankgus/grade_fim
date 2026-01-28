@@ -8,99 +8,84 @@ DB_FILE = "escola_database.json"
 def criar_dados_iniciais():
     """Cria dados iniciais para teste"""
     
-    # ✅ CORREÇÃO: Professores com nomes EXATOS das disciplinas e grupo AMBOS
+    # Professores sem campo grupo
     professores = [
-        Professor("Heliana", ["Português A", "Português B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Deise", ["Português A", "Português B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Loide", ["Português A", "Português B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Tatiane", ["Matemática", "Matemática","Matemática", "Matemática"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Ricardo", ["Matemática", "Matemática","Matemática", "Matemática"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Laís", ["História A", "História B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Waldemar", ["História A", "História B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Rene", ["Geografia A", "Geografia B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Vladmir", ["Química A", "Química B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Zabuor", ["Química A", "Química B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Gisele", ["Geografia A", "Geografia B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Marina", ["Biologia A", "Biologia B", "Ciências A", "Ciências B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Tatiane II", ["Matemática", "Matemática","Matemática", "Matemática"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Santiago", ["Matemática", "Matemática","Matemática", "Matemática"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Andréia Lucia", ["Matemática", "Matemática","Matemática", "Matemática"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("César", ["Informática A", "Informática B", "Física A", "Física B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Anna Maria", ["Filosofia A", "Filosofia B", "Sociologia A", "Sociologia B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Marcão", ["Educação Física A", "Educação Física B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Andréia", ["Educação Física A", "Educação Física B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Vanessa", ["Arte A", "Arte B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Maria Luiza", ["Inglês A", "Inglês B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
-        Professor("Andréia Barreto", ["Dinâmica A", "Dinâmica B", "Vida Pratica A", "Vida Pratica B"], {"segunda", "terca", "quarta", "quinta", "sexta"}, "AMBOS"),
+        Professor("Heliana", ["Português"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Deise", ["Português"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Loide", ["Português"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Tatiane", ["Matemática"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Ricardo", ["Matemática"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Laís", ["História"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Waldemar", ["História"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Rene", ["Geografia"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Vladmir", ["Química"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Zabuor", ["Química"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Gisele", ["Geografia"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Marina", ["Biologia", "Ciências"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Santiago", ["Matemática"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Andréia Lucia", ["Matemática"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("César", ["Informática", "Física"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Anna Maria", ["Filosofia", "Sociologia"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Marcão", ["Educação Física"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Andréia", ["Educação Física"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Vanessa", ["Arte"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Maria Luiza", ["Inglês"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
+        Professor("Andréia Barreto", ["Dinâmica", "Vida Pratica"], {"segunda", "terca", "quarta", "quinta", "sexta"}),
     ]
     
-    # ✅ CORREÇÃO: Turmas com segmento correto
+    # Turmas sem campo grupo (grupo já está no nome: 6anoA, 6anoB, etc)
     turmas = [
-        Turma("6anoA", "6ano", "manha", "A", "EF_II"),
-        Turma("7anoA", "7ano", "manha", "A", "EF_II"),
-        Turma("8anoA", "8ano", "manha", "A", "EF_II"),
-        Turma("9anoA", "9ano", "manha", "A", "EF_II"),
-        Turma("1emA", "1em", "manha", "A", "EM"),
-        Turma("2emA", "2em", "manha", "A", "EM"),
-        Turma("3emA", "3em", "manha", "A", "EM"),
-        Turma("6anoB", "6ano", "manha", "B", "EF_II"),
-        Turma("7anoB", "7ano", "manha", "B", "EF_II"),
-        Turma("8anoB", "8ano", "manha", "B", "EF_II"),
-        Turma("9anoB", "9ano", "manha", "B", "EF_II"),
-        Turma("1emB", "1em", "manha", "B", "EM"),
-        Turma("2emB", "2em", "manha", "B", "EM"),
-        Turma("3emB", "3em", "manha", "B", "EM"),
+        Turma("6anoA", "6ano", "manha", "EF_II"),
+        Turma("7anoA", "7ano", "manha", "EF_II"),
+        Turma("8anoA", "8ano", "manha", "EF_II"),
+        Turma("9anoA", "9ano", "manha", "EF_II"),
+        Turma("1emA", "1em", "manha", "EM"),
+        Turma("2emA", "2em", "manha", "EM"),
+        Turma("3emA", "3em", "manha", "EM"),
+        Turma("6anoB", "6ano", "manha", "EF_II"),
+        Turma("7anoB", "7ano", "manha", "EF_II"),
+        Turma("8anoB", "8ano", "manha", "EF_II"),
+        Turma("9anoB", "9ano", "manha", "EF_II"),
+        Turma("1emB", "1em", "manha", "EM"),
+        Turma("2emB", "2em", "manha", "EM"),
+        Turma("3emB", "3em", "manha", "EM"),
     ]
     
-    # ✅ CORREÇÃO: Disciplinas vinculadas às turmas específicas
+    # Disciplinas sem campo grupo (aplicam a todas as turmas especificadas)
     disciplinas = [
-        # GRUPO A - TURMAS A
-        Disciplina("Português A", 4, "pesada", ["6anoA", "7anoA", "8anoA", "9anoA", "1emA", "2emA", "3emA"], "A"),
-        Disciplina("Matemática", 3, "pesada", ["6anoA", "7anoA", "8anoA", "9anoA" ], "A"),
-        Disciplina("Matemática", 5, "pesada", ["1emA", "2emA", "3emA"], "A"),
-        Disciplina("História A", 2, "media", ["6anoA", "7anoA", "8anoA", "9anoA", "1emA", "2emA", "3emA"], "A"),
-        Disciplina("Geografia A", 2, "media", ["6anoA", "7anoA", "8anoA", "9anoA", "1emA", "2emA", "3emA"], "A"),
-        Disciplina("Ciências A", 2, "media", ["6anoA", "7anoA", "8anoA", "9anoA"], "A"),
-        Disciplina("Biologia A", 2, "media", ["1emA", "2emA", "3emA"], "A"),
-        Disciplina("Física A", 2, "pesada", ["1emA", "2emA", "3emA"], "A"),
-        Disciplina("Química A", 2, "pesada", ["1emA", "2emA", "3emA"], "A"),
-        Disciplina("Inglês A", 2, "leve", ["6anoA", "7anoA", "8anoA", "9anoA", "1emA", "2emA", "3emA"], "A"),
-        Disciplina("Arte A", 2, "leve", ["6anoA", "7anoA", "8anoA", "9anoA", "1emA", "2emA", "3emA"], "A"),
-        Disciplina("Educação Física A", 2, "pratica", ["6anoA", "7anoA", "8anoA", "9anoA", "1emA", "2emA", "3emA"], "A"),
-        Disciplina("Filosofia A", 2, "media", ["1emA", "2emA", "3emA"], "A"),
-        Disciplina("Sociologia A", 2, "media", ["1emA", "2emA", "3emA"], "A"),
-        Disciplina("Informática A", 2, "leve", ["6anoA", "7anoA", "8anoA", "9anoA", "1emA", "2emA", "3emA"], "A"),
-        Disciplina("Dinâmica A", 2, "leve", ["6anoA", "7anoA", "8anoA", "9anoA"], "A"),
-        Disciplina("Vida Pratica A", 2, "leve", ["6anoA", "7anoA", "8anoA", "9anoA"], "A"),
-        Disciplina("Robotica A", 2, "media", ["1emA", "2emA", "3emA"], "A"),        
-        Disciplina("Psicologia A", 2, "media", ["1emA", "2emA", "3emA"], "A"),
+        # Turmas A
+        Disciplina("Português", 4, "pesada", ["6anoA", "7anoA", "8anoA", "9anoA", "1emA", "2emA", "3emA"]),
+        Disciplina("Matemática", 5, "pesada", ["6anoA", "7anoA", "8anoA", "9anoA", "1emA", "2emA", "3emA"]),
+        Disciplina("História", 2, "media", ["6anoA", "7anoA", "8anoA", "9anoA", "1emA", "2emA", "3emA"]),
+        Disciplina("Geografia", 2, "media", ["6anoA", "7anoA", "8anoA", "9anoA", "1emA", "2emA", "3emA"]),
+        Disciplina("Ciências", 2, "media", ["6anoA", "7anoA", "8anoA", "9anoA"]),
+        Disciplina("Biologia", 2, "media", ["1emA", "2emA", "3emA"]),
+        Disciplina("Física", 2, "pesada", ["1emA", "2emA", "3emA"]),
+        Disciplina("Química", 2, "pesada", ["1emA", "2emA", "3emA"]),
+        Disciplina("Inglês", 2, "leve", ["6anoA", "7anoA", "8anoA", "9anoA", "1emA", "2emA", "3emA"]),
+        Disciplina("Arte", 2, "leve", ["6anoA", "7anoA", "8anoA", "9anoA", "1emA", "2emA", "3emA"]),
+        Disciplina("Educação Física", 2, "pratica", ["6anoA", "7anoA", "8anoA", "9anoA", "1emA", "2emA", "3emA"]),
+        Disciplina("Filosofia", 2, "media", ["1emA", "2emA", "3emA"]),
+        Disciplina("Sociologia", 2, "media", ["1emA", "2emA", "3emA"]),
+        Disciplina("Informática", 2, "leve", ["6anoA", "7anoA", "8anoA", "9anoA", "1emA", "2emA", "3emA"]),
+        Disciplina("Dinâmica", 2, "leve", ["6anoA", "7anoA", "8anoA", "9anoA"]),
         
-        
-        
-        
-        
-        
-        
-        # GRUPO B - TURMAS B
-        Disciplina("Português B", 4, "pesada", ["6anoB", "7anoB", "8anoB", "9anoB", "1emB", "2emB", "3emB"], "B"),
-        Disciplina("Matemática",5, "pesada", ["1emB", "2emB", "3emB"], "B"),
-        Disciplina("Matemática", 4, "pesada", ["6anoB", "7anoB", "8anoB", "9anoB"], "B"),
-        Disciplina("História B", 2, "media", ["6anoB", "7anoB", "8anoB", "9anoB", "1emB", "2emB", "3emB"], "B"),
-        Disciplina("Geografia B", 2, "media", ["6anoB", "7anoB", "8anoB", "9anoB", "1emB", "2emB", "3emB"], "B"),
-        Disciplina("Ciências B", 2, "media", ["6anoB", "7anoB", "8anoB", "9anoB"], "B"),
-        Disciplina("Biologia B", 2, "media", ["1emB", "2emB", "3emB"], "B"),
-        Disciplina("Física B", 2, "pesada", ["1emB", "2emB", "3emB"], "B"),
-        Disciplina("Química B", 2, "pesada", ["1emB", "2emB", "3emB"], "B"),
-        Disciplina("Inglês B", 2, "leve", ["6anoB", "7anoB", "8anoB", "9anoB", "1emB", "2emB", "3emB"], "B"),
-        Disciplina("Arte B", 2, "leve", ["6anoB", "7anoB", "8anoB", "9anoB", "1emB", "2emB", "3emB"], "B"),
-        Disciplina("Educação Física B", 2, "pratica", ["6anoB", "7anoB", "8anoB", "9anoB", "1emB", "2emB", "3emB"], "B"),
-        Disciplina("Filosofia B", 2, "media", ["1emB", "2emB", "3emB"], "B"),
-        Disciplina("Sociologia B", 2, "media", ["1emB", "2emB", "3emB"], "B"),
-        Disciplina("Informática B", 2, "leve", ["6anoB", "7anoB", "8anoB", "9anoB", "1emB", "2emB", "3emB"], "B"),
-        Disciplina("Dinâmica B", 1, "leve", ["6anoB", "7anoB", "8anoB", "9anoB"], "B"),
-        Disciplina("Vida Pratica B", 2, "leve", ["6anoB", "7anoB", "8anoB", "9anoB"], "B"),
-        Disciplina("Psicologia B", 2, "media", ["1emB", "2emB", "3emB"], "B"),
-        Disciplina("Sociologia B", 2, "media", ["1emB", "2emB", "3emB"], "B"),
+        # Turmas B  
+        Disciplina("Português", 4, "pesada", ["6anoB", "7anoB", "8anoB", "9anoB", "1emB", "2emB", "3emB"]),
+        Disciplina("Matemática", 5, "pesada", ["6anoB", "7anoB", "8anoB", "9anoB", "1emB", "2emB", "3emB"]),
+        Disciplina("História", 2, "media", ["6anoB", "7anoB", "8anoB", "9anoB", "1emB", "2emB", "3emB"]),
+        Disciplina("Geografia", 2, "media", ["6anoB", "7anoB", "8anoB", "9anoB", "1emB", "2emB", "3emB"]),
+        Disciplina("Ciências", 2, "media", ["6anoB", "7anoB", "8anoB", "9anoB"]),
+        Disciplina("Biologia", 2, "media", ["1emB", "2emB", "3emB"]),
+        Disciplina("Física", 2, "pesada", ["1emB", "2emB", "3emB"]),
+        Disciplina("Química", 2, "pesada", ["1emB", "2emB", "3emB"]),
+        Disciplina("Inglês", 2, "leve", ["6anoB", "7anoB", "8anoB", "9anoB", "1emB", "2emB", "3emB"]),
+        Disciplina("Arte", 2, "leve", ["6anoB", "7anoB", "8anoB", "9anoB", "1emB", "2emB", "3emB"]),
+        Disciplina("Educação Física", 2, "pratica", ["6anoB", "7anoB", "8anoB", "9anoB", "1emB", "2emB", "3emB"]),
+        Disciplina("Filosofia", 2, "media", ["1emB", "2emB", "3emB"]),
+        Disciplina("Sociologia", 2, "media", ["1emB", "2emB", "3emB"]),
+        Disciplina("Informática", 2, "leve", ["6anoB", "7anoB", "8anoB", "9anoB", "1emB", "2emB", "3emB"]),
+        Disciplina("Dinâmica", 1, "leve", ["6anoB", "7anoB", "8anoB", "9anoB"]),
     ]
 
     
@@ -183,9 +168,21 @@ def carregar_professores():
     
     for item in professores:
         if isinstance(item, dict):
-            # Converter disponibilidade de lista para set (se necessário)
-            if 'disponibilidade' in item and isinstance(item['disponibilidade'], list):
-                item['disponibilidade'] = set(item['disponibilidade'])
+            # Converter disponibilidade conforme o tipo no banco
+            if 'disponibilidade' in item:
+                disp = item['disponibilidade']
+                
+                # Se for dicionário (formato novo), extrair apenas os dias disponíveis
+                if isinstance(disp, dict):
+                    item['disponibilidade'] = [dia for dia, disponivel in disp.items() if disponivel]
+                # Se for lista (formato antigo), manter como está
+                elif isinstance(disp, list):
+                    pass  # Já está no formato correto
+            
+            # Garantir que carga_horaria existe
+            if 'carga_horaria' not in item:
+                item['carga_horaria'] = 0
+            
             # Converter horarios_indisponiveis de lista para set/lista (manter como lista)
             resultado.append(Professor(**item))
         elif hasattr(item, 'nome') and hasattr(item, 'disciplinas'):
@@ -202,6 +199,10 @@ def carregar_disciplinas():
     
     for item in disciplinas:
         if isinstance(item, dict):
+            # Compatibilidade: renomear carga_turmas para carga_por_turma
+            if 'carga_turmas' in item:
+                item['carga_por_turma'] = item.pop('carga_turmas')
+            
             resultado.append(Disciplina(**item))
         elif hasattr(item, 'nome') and hasattr(item, 'carga_semanal'):
             resultado.append(item)

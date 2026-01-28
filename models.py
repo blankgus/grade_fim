@@ -9,7 +9,6 @@ class Turma:
     nome: str
     serie: str
     turno: str
-    grupo: str
     segmento: str = ""
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
 
@@ -18,9 +17,9 @@ class Professor:
     nome: str
     disciplinas: List[str]
     disponibilidade: List[str]
-    grupo: str
     horarios_indisponiveis: List[str] = field(default_factory=list)
     carga_horaria_maxima: int = 35  # Carga individual do professor (padrão 35h)
+    carga_horaria: int = 0  # Carga real atribuída (sincronizada do PDF)
     observacoes: str = ""  # Restrições especiais (ex: "Análises bater com 1º e 2º EM B")
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
 
@@ -30,11 +29,10 @@ class Disciplina:
     carga_semanal: int  # DEPRECATED: mantido para compatibilidade, usar carga_por_turma
     tipo: str
     turmas: List[str]
-    grupo: str
     cor_fundo: str = "#4A90E2"
     cor_fonte: str = "#FFFFFF"
-    carga_por_turma: Dict[str, int] = field(default_factory=dict)  # {"6ºA": 5, "7ºA": 4, ...}
-    professor_por_turma: Dict[str, str] = field(default_factory=dict)  # NOVO: {"6ºA": "Santiago", "7ºA": "Cesar", ...}
+    carga_por_turma: Dict[str, int] = field(default_factory=dict)  # {"6anoA": 5, "7anoA": 4, ...}
+    professor_por_turma: Dict[str, str] = field(default_factory=dict)  # {"6anoA": "Santiago", "7anoA": "Cesar", ...}
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
     
     def obter_carga_turma(self, turma_nome: str) -> int:

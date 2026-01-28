@@ -1,0 +1,1729 @@
+{
+  "professores": [
+    {
+      "nome": "Heliana",
+      "disciplinas": [
+        "Português",
+        "Oralidade (Eletiva)"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [
+        "seg_7",
+        "ter_7",
+        "qua_7",
+        "qui_7",
+        "sex_7"
+      ],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "6a14879e-6164-4819-b900-eaeb221a9791"
+    },
+    {
+      "nome": "Deise",
+      "disciplinas": [
+        "Português"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "db243424-9f9e-40ab-9398-d394ef0038e7"
+    },
+    {
+      "nome": "Loide",
+      "disciplinas": [
+        "Português"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "f1466c3c-4fff-4cf0-86f9-cd3ac3d30eea"
+    },
+    {
+      "nome": "Ricardo",
+      "disciplinas": [
+        "Matemática"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "05833b7d-9c7c-4a90-96a8-23193a2c8cda"
+    },
+    {
+      "nome": "Laís",
+      "disciplinas": [
+        "História",
+        "Dinâmica"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "53721f29-0733-4262-9f2e-5f778b3845f5"
+    },
+    {
+      "nome": "Waldemar",
+      "disciplinas": [
+        "História",
+        "Análises Historiográficas"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "c6f212f2-fc89-4df1-9ccb-9781f8dafc7f"
+    },
+    {
+      "nome": "Rene",
+      "disciplinas": [
+        "Geografia"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "61d6eb1b-4e18-4792-afab-4b1cf0a18957"
+    },
+    {
+      "nome": "Vlad",
+      "disciplinas": [
+        "Química",
+        "Tecnologia e  Saúde",
+        "Práticas  experimentais ",
+        "Análises  Químicas "
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "d42a42ec-46ca-4e15-b9d5-9b9cfc282539"
+    },
+    {
+      "nome": "Zabuor",
+      "disciplinas": [
+        "Química"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "80b7fccb-79ca-4374-b561-7672b174f320"
+    },
+    {
+      "nome": "Marina",
+      "disciplinas": [
+        "Biologia",
+        "Ciências",
+        "Fenômenos  Biológicos"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "2f3f3b27-f208-49ae-a847-803da520b09a"
+    },
+    {
+      "nome": "Santiago",
+      "disciplinas": [
+        "Matemática"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "0ff4d72d-00fd-4a55-a671-a59c473bb66d"
+    },
+    {
+      "nome": "Cesar",
+      "disciplinas": [
+        "Informática",
+        "Física"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "cd22f1bd-010f-46d4-a80b-d7afe005b669"
+    },
+    {
+      "nome": "Anna Maria",
+      "disciplinas": [
+        "Filosofia",
+        "Sociologia"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "85dc0529-7610-4952-b528-e475bb136ce1"
+    },
+    {
+      "nome": "Marcão",
+      "disciplinas": [
+        "Educação Física"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "4270c746-a9b8-4b73-82d1-4fcab50737f2"
+    },
+    {
+      "nome": "Andréia",
+      "disciplinas": [
+        "Educação Física"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "07a95d27-d994-4408-b6a0-bc108930f2be"
+    },
+    {
+      "nome": "Vanessa",
+      "disciplinas": [
+        "Arte"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "ab724112-705a-448a-9ec5-60a6818a5653"
+    },
+    {
+      "nome": "Malu",
+      "disciplinas": [
+        "Inglês"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "be9c54db-77cf-4933-b924-9ceda2a5c3d3"
+    },
+    {
+      "nome": "Matheus",
+      "disciplinas": [
+        "Informática",
+        "Física"
+      ],
+      "disponibilidade": [
+        "sexta",
+        "segunda",
+        "quinta",
+        "terca",
+        "quarta"
+      ],
+      "horarios_indisponiveis": [],
+      "carga_horaria_maxima": 35,
+      "observacoes": "",
+      "id": "0a9f125e-d2c8-443c-9591-52260e079206"
+    }
+  ],
+  "disciplinas": [
+    {
+      "nome": "Análises",
+      "carga_semanal": 1,
+      "tipo": "media",
+      "turmas": [
+        "1emA"
+      ],
+      "carga_por_turma": {
+        "1emA": 1
+      },
+      "professor_por_turma": {
+        "1emA": "Zabuor"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF"
+    },
+    {
+      "nome": "Análises Historiográficas",
+      "carga_semanal": 2,
+      "tipo": "pesada",
+      "turmas": [
+        "2emA"
+      ],
+      "carga_por_turma": {
+        "2emA": 2
+      },
+      "professor_por_turma": {
+        "2emA": "Laís"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "5dae2908-1f30-4c08-ba01-6ab4cb801ec5"
+    },
+    {
+      "nome": "Análises Químicas",
+      "carga_semanal": 1,
+      "tipo": "media",
+      "turmas": [],
+      "carga_por_turma": {},
+      "professor_por_turma": {},
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF"
+    },
+    {
+      "nome": "Arte",
+      "carga_semanal": 2,
+      "tipo": "leve",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA",
+        "3emB",
+        "6anoA",
+        "6anoB",
+        "7anoA",
+        "7anoB",
+        "8anoA",
+        "8anoB",
+        "9anoA",
+        "9anoB"
+      ],
+      "carga_por_turma": {
+        "6anoB": 2,
+        "7anoB": 2,
+        "8anoB": 1,
+        "9anoB": 1,
+        "6anoA": 2,
+        "7anoA": 2,
+        "8anoA": 1,
+        "9anoA": 1,
+        "1emB": 1,
+        "2emB": 1,
+        "3emB": 1,
+        "1emA": 1,
+        "2emA": 1,
+        "3emA": 1
+      },
+      "professor_por_turma": {
+        "6anoB": "Vanessa",
+        "7anoB": "Vanessa",
+        "8anoB": "Vanessa",
+        "9anoB": "Vanessa",
+        "6anoA": "Vanessa",
+        "7anoA": "Vanessa",
+        "8anoA": "Vanessa",
+        "9anoA": "Vanessa",
+        "1emB": "Vanessa",
+        "2emB": "Vanessa",
+        "3emB": "Vanessa",
+        "1emA": "Vanessa",
+        "2emA": "Vanessa",
+        "3emA": "Vanessa"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "1574bd80-5e37-4789-81f8-3e3a3f81e606"
+    },
+    {
+      "nome": "Biologia",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA",
+        "3emB"
+      ],
+      "carga_por_turma": {
+        "1emB": 2,
+        "2emB": 2,
+        "3emB": 2,
+        "1emA": 2,
+        "2emA": 2,
+        "3emA": 2
+      },
+      "professor_por_turma": {
+        "1emB": "Marina",
+        "2emB": "Marina",
+        "3emB": "Marina",
+        "1emA": "Marina",
+        "2emA": "Marina",
+        "3emA": "Marina"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "339479ac-7c00-4332-bdb7-5d4c0c57c4a7"
+    },
+    {
+      "nome": "Ciências",
+      "carga_semanal": 3,
+      "tipo": "media",
+      "turmas": [
+        "6anoA",
+        "6anoB",
+        "7anoA",
+        "7anoB",
+        "8anoA",
+        "8anoB"
+      ],
+      "carga_por_turma": {
+        "6anoB": 3,
+        "7anoB": 3,
+        "8anoB": 2,
+        "6anoA": 3,
+        "7anoA": 3,
+        "8anoA": 2
+      },
+      "professor_por_turma": {
+        "6anoB": "Marina",
+        "7anoB": "Marina",
+        "8anoB": "Marina",
+        "6anoA": "Marina",
+        "7anoA": "Marina",
+        "8anoA": "Marina"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "3bc8ba50-4957-47e8-afae-13752f2fa479"
+    },
+    {
+      "nome": "Dinâmica",
+      "carga_semanal": 1,
+      "tipo": "leve",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA",
+        "3emB",
+        "6anoA",
+        "6anoB",
+        "7anoA",
+        "7anoB",
+        "8anoA",
+        "8anoB",
+        "9anoA",
+        "9anoB"
+      ],
+      "carga_por_turma": {
+        "6anoB": 1,
+        "7anoB": 1,
+        "8anoB": 1,
+        "9anoB": 1,
+        "6anoA": 1,
+        "7anoA": 1,
+        "8anoA": 1,
+        "9anoA": 1,
+        "1emA": 1,
+        "1emB": 1,
+        "2emB": 1,
+        "3emB": 1,
+        "2emA": 1,
+        "3emA": 1
+      },
+      "professor_por_turma": {
+        "6anoB": "Laís",
+        "7anoB": "Laís",
+        "8anoB": "Laís",
+        "9anoB": "Laís",
+        "6anoA": "Laís",
+        "7anoA": "Laís",
+        "8anoA": "Laís",
+        "9anoA": "Laís",
+        "1emA": "Laís",
+        "1emB": "Laís",
+        "2emB": "Laís",
+        "3emB": "Laís",
+        "2emA": "Waldemar",
+        "3emA": "Waldemar"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "d6dcc736-1ca1-4f6d-848b-fd231434e429"
+    },
+    {
+      "nome": "Educação Financeira",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emB",
+        "3emA",
+        "3emB",
+        "8anoA",
+        "8anoB",
+        "9anoA",
+        "9anoB"
+      ],
+      "carga_por_turma": {
+        "3emB": 1,
+        "1emB": 2,
+        "2emB": 2,
+        "1emA": 2,
+        "9anoA": 1,
+        "3emA": 1,
+        "8anoB": 1,
+        "9anoB": 1,
+        "8anoA": 1
+      },
+      "professor_por_turma": {
+        "3emB": "Ricardo",
+        "1emB": "Ricardo",
+        "2emB": "Ricardo",
+        "1emA": "Matheus",
+        "9anoA": "Santiago",
+        "3emA": "Santiago",
+        "8anoB": "Cesar",
+        "9anoB": "Cesar",
+        "8anoA": "Cesar"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF"
+    },
+    {
+      "nome": "Educação Física",
+      "carga_semanal": 2,
+      "tipo": "pratica",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA",
+        "3emB",
+        "6anoA",
+        "6anoB",
+        "7anoA",
+        "7anoB",
+        "8anoA",
+        "8anoB",
+        "9anoA",
+        "9anoB"
+      ],
+      "carga_por_turma": {
+        "6anoB": 2,
+        "7anoB": 2,
+        "8anoB": 2,
+        "6anoA": 2,
+        "7anoA": 2,
+        "8anoA": 2,
+        "9anoA": 2,
+        "1emA": 1,
+        "9anoB": 2,
+        "1emB": 1,
+        "2emB": 1,
+        "3emB": 2,
+        "2emA": 1,
+        "3emA": 2
+      },
+      "professor_por_turma": {
+        "6anoB": "Andréia",
+        "7anoB": "Andréia",
+        "8anoB": "Andréia",
+        "6anoA": "Andréia",
+        "7anoA": "Andréia",
+        "8anoA": "Andréia",
+        "9anoA": "Andréia",
+        "1emA": "Andréia",
+        "9anoB": "Andréia",
+        "1emB": "Andréia",
+        "2emB": "Andréia",
+        "3emB": "Andréia",
+        "2emA": "Andréia",
+        "3emA": "Andréia"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "e604f788-1ead-4f10-825a-2f723cbaff3a"
+    },
+    {
+      "nome": "Fenômenos Biológicos",
+      "carga_semanal": 1,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB"
+      ],
+      "carga_por_turma": {
+        "1emB": 1,
+        "2emB": 1,
+        "1emA": 1,
+        "2emA": 1
+      },
+      "professor_por_turma": {
+        "1emB": "Marina",
+        "2emB": "Marina",
+        "1emA": "Marina",
+        "2emA": "Marina"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF"
+    },
+    {
+      "nome": "Filosofia",
+      "carga_semanal": 1,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA",
+        "3emB"
+      ],
+      "carga_por_turma": {
+        "1emB": 1,
+        "2emB": 1,
+        "3emB": 1,
+        "1emA": 1,
+        "2emA": 1,
+        "3emA": 1
+      },
+      "professor_por_turma": {
+        "1emB": "Anna",
+        "2emB": "Anna",
+        "3emB": "Anna",
+        "1emA": "Anna",
+        "2emA": "Anna",
+        "3emA": "Anna"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "007670f7-dc4f-485e-bfbe-3015c570b026"
+    },
+    {
+      "nome": "Física",
+      "carga_semanal": 3,
+      "tipo": "pesada",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA",
+        "3emB",
+        "8anoA",
+        "8anoB",
+        "9anoA",
+        "9anoB"
+      ],
+      "carga_por_turma": {
+        "1emB": 3,
+        "2emB": 3,
+        "3emB": 3,
+        "8anoB": 1,
+        "9anoB": 1,
+        "8anoA": 1,
+        "9anoA": 1,
+        "1emA": 3,
+        "2emA": 3,
+        "3emA": 3
+      },
+      "professor_por_turma": {
+        "1emB": "Ricardo",
+        "2emB": "Ricardo",
+        "3emB": "Ricardo",
+        "8anoB": "Matheus",
+        "9anoB": "Matheus",
+        "8anoA": "Matheus",
+        "9anoA": "Matheus",
+        "1emA": "Matheus",
+        "2emA": "Matheus",
+        "3emA": "Matheus"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "c28e78df-f99a-4de6-9749-23caaa63de3b"
+    },
+    {
+      "nome": "Geografia",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA",
+        "3emB",
+        "6anoA",
+        "6anoB",
+        "7anoA",
+        "7anoB",
+        "8anoA",
+        "8anoB",
+        "9anoA",
+        "9anoB"
+      ],
+      "carga_por_turma": {
+        "6anoA": 2,
+        "7anoA": 2,
+        "8anoA": 2,
+        "9anoA": 2,
+        "6anoB": 2,
+        "7anoB": 2,
+        "8anoB": 2,
+        "9anoB": 2,
+        "1emA": 2,
+        "2emA": 2,
+        "3emA": 2,
+        "1emB": 2,
+        "2emB": 2,
+        "3emB": 2
+      },
+      "professor_por_turma": {
+        "6anoA": "Rene",
+        "7anoA": "Rene",
+        "8anoA": "Rene",
+        "9anoA": "Rene",
+        "6anoB": "Rene",
+        "7anoB": "Rene",
+        "8anoB": "Rene",
+        "9anoB": "Rene",
+        "1emA": "Rene",
+        "2emA": "Rene",
+        "3emA": "Rene",
+        "1emB": "Rene",
+        "2emB": "Rene",
+        "3emB": "Rene"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "605edf22-375a-46eb-849a-00e7ed1a4fd4"
+    },
+    {
+      "nome": "História",
+      "carga_semanal": 3,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA",
+        "3emB",
+        "6anoA",
+        "6anoB",
+        "7anoA",
+        "7anoB",
+        "8anoA",
+        "8anoB",
+        "9anoA",
+        "9anoB"
+      ],
+      "carga_por_turma": {
+        "6anoB": 2,
+        "7anoB": 2,
+        "8anoB": 2,
+        "9anoB": 2,
+        "6anoA": 2,
+        "7anoA": 2,
+        "8anoA": 2,
+        "9anoA": 2,
+        "1emB": 1,
+        "2emB": 1,
+        "3emB": 3,
+        "1emA": 1,
+        "2emA": 1,
+        "3emA": 3
+      },
+      "professor_por_turma": {
+        "6anoB": "Laís",
+        "7anoB": "Laís",
+        "8anoB": "Laís",
+        "9anoB": "Laís",
+        "6anoA": "Laís",
+        "7anoA": "Laís",
+        "8anoA": "Laís",
+        "9anoA": "Laís",
+        "1emB": "Waldemar",
+        "2emB": "Waldemar",
+        "3emB": "Waldemar",
+        "1emA": "Waldemar",
+        "2emA": "Waldemar",
+        "3emA": "Waldemar"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "15072876-48dc-46fe-bf53-ff543b763138"
+    },
+    {
+      "nome": "Informática",
+      "carga_semanal": 1,
+      "tipo": "leve",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA",
+        "3emB",
+        "6anoA",
+        "6anoB",
+        "7anoA",
+        "7anoB",
+        "8anoA",
+        "8anoB",
+        "9anoA",
+        "9anoB"
+      ],
+      "carga_por_turma": {
+        "6anoB": 1,
+        "7anoB": 1,
+        "8anoB": 1,
+        "9anoB": 1,
+        "6anoA": 1,
+        "7anoA": 1,
+        "8anoA": 1,
+        "9anoA": 1,
+        "1emB": 1,
+        "2emB": 1,
+        "3emB": 1,
+        "1emA": 1,
+        "2emA": 1,
+        "3emA": 1
+      },
+      "professor_por_turma": {
+        "6anoB": "Matheus",
+        "7anoB": "Matheus",
+        "8anoB": "Matheus",
+        "9anoB": "Matheus",
+        "6anoA": "Matheus",
+        "7anoA": "Matheus",
+        "8anoA": "Matheus",
+        "9anoA": "Matheus",
+        "1emB": "Matheus",
+        "2emB": "Matheus",
+        "3emB": "Matheus",
+        "1emA": "Matheus",
+        "2emA": "Matheus",
+        "3emA": "Matheus"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "66a4313e-b6e6-4b2c-aa31-3d0a9b6c0d7d"
+    },
+    {
+      "nome": "Inglês",
+      "carga_semanal": 2,
+      "tipo": "leve",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA",
+        "3emB",
+        "6anoA",
+        "6anoB",
+        "7anoA",
+        "7anoB",
+        "8anoA",
+        "8anoB",
+        "9anoA",
+        "9anoB"
+      ],
+      "carga_por_turma": {
+        "6anoB": 2,
+        "7anoB": 2,
+        "8anoB": 2,
+        "9anoB": 2,
+        "6anoA": 2,
+        "7anoA": 2,
+        "8anoA": 2,
+        "9anoA": 2,
+        "1emB": 2,
+        "2emB": 2,
+        "3emB": 2,
+        "1emA": 2,
+        "2emA": 2,
+        "3emA": 2
+      },
+      "professor_por_turma": {
+        "6anoB": "Malu",
+        "7anoB": "Malu",
+        "8anoB": "Malu",
+        "9anoB": "Malu",
+        "6anoA": "Malu",
+        "7anoA": "Malu",
+        "8anoA": "Malu",
+        "9anoA": "Malu",
+        "1emB": "Malu",
+        "2emB": "Malu",
+        "3emB": "Malu",
+        "1emA": "Malu",
+        "2emA": "Malu",
+        "3emA": "Malu"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "d5598b47-4202-411b-9f64-b0bc83131e37"
+    },
+    {
+      "nome": "Matemática",
+      "carga_semanal": 5,
+      "tipo": "pesada",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA",
+        "3emB",
+        "6anoA",
+        "6anoB",
+        "7anoA",
+        "7anoB",
+        "8anoA",
+        "8anoB",
+        "9anoA",
+        "9anoB"
+      ],
+      "carga_por_turma": {
+        "1emB": 4,
+        "2emB": 4,
+        "3emB": 5,
+        "6anoA": 5,
+        "7anoA": 5,
+        "8anoA": 5,
+        "9anoA": 5,
+        "1emA": 4,
+        "2emA": 4,
+        "6anoB": 5,
+        "7anoB": 5,
+        "8anoB": 5,
+        "9anoB": 5,
+        "3emA": 5
+      },
+      "professor_por_turma": {
+        "1emB": "Ricardo",
+        "2emB": "Ricardo",
+        "3emB": "Ricardo",
+        "6anoA": "Santiago",
+        "7anoA": "Santiago",
+        "8anoA": "Santiago",
+        "9anoA": "Santiago",
+        "1emA": "Santiago",
+        "2emA": "Cesar",
+        "6anoB": "Cesar",
+        "7anoB": "Cesar",
+        "8anoB": "Cesar",
+        "9anoB": "Cesar",
+        "3emA": "Cesar"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "36711108-773c-44ee-a51f-42bfe8cb8031"
+    },
+    {
+      "nome": "Mercado",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "3emB"
+      ],
+      "carga_por_turma": {
+        "3emB": 2
+      },
+      "professor_por_turma": {
+        "3emB": "Waldemar"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF"
+    },
+    {
+      "nome": "Mercado de trabalho",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA"
+      ],
+      "carga_por_turma": {
+        "2emA": 2,
+        "3emA": 2,
+        "1emB": 2,
+        "2emB": 2
+      },
+      "professor_por_turma": {
+        "2emA": "Waldemar",
+        "3emA": "Waldemar",
+        "1emB": "Waldemar",
+        "2emB": "Waldemar"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF"
+    },
+    {
+      "nome": "Oralidade",
+      "carga_semanal": 1,
+      "tipo": "media",
+      "turmas": [
+        "1emB",
+        "2emA",
+        "2emB"
+      ],
+      "carga_por_turma": {
+        "1emB": 1,
+        "2emB": 1,
+        "2emA": 1
+      },
+      "professor_por_turma": {
+        "1emB": "Heliana",
+        "2emB": "Heliana",
+        "2emA": "Loide"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF"
+    },
+    {
+      "nome": "Português",
+      "carga_semanal": 5,
+      "tipo": "pesada",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA",
+        "3emB",
+        "6anoA",
+        "6anoB",
+        "7anoA",
+        "7anoB",
+        "8anoA",
+        "8anoB",
+        "9anoA",
+        "9anoB"
+      ],
+      "carga_por_turma": {
+        "6anoB": 5,
+        "7anoB": 5,
+        "8anoB": 5,
+        "9anoB": 5,
+        "1emA": 3,
+        "2emA": 3,
+        "1emB": 3,
+        "2emB": 3,
+        "3emB": 4,
+        "3emA": 4,
+        "6anoA": 5,
+        "7anoA": 5,
+        "8anoA": 5,
+        "9anoA": 5
+      },
+      "professor_por_turma": {
+        "6anoB": "Heliana",
+        "7anoB": "Heliana",
+        "8anoB": "Heliana",
+        "9anoB": "Heliana",
+        "1emA": "Heliana",
+        "2emA": "Heliana",
+        "1emB": "Loide",
+        "2emB": "Loide",
+        "3emB": "Loide",
+        "3emA": "Loide",
+        "6anoA": "Deise",
+        "7anoA": "Deise",
+        "8anoA": "Deise",
+        "9anoA": "Deise"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "f22ad979-6a41-4a3b-b380-30eeb9bcca1f"
+    },
+    {
+      "nome": "Práticas Historiográficas",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB"
+      ],
+      "carga_por_turma": {
+        "1emB": 2,
+        "2emB": 2,
+        "1emA": 2,
+        "2emA": 2
+      },
+      "professor_por_turma": {
+        "1emB": "Waldemar",
+        "2emB": "Waldemar",
+        "1emA": "Waldemar",
+        "2emA": "Waldemar"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF"
+    },
+    {
+      "nome": "Práticas experimentais",
+      "carga_semanal": 2,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "3emA",
+        "3emB"
+      ],
+      "carga_por_turma": {
+        "3emA": 1,
+        "1emA": 2,
+        "3emB": 1
+      },
+      "professor_por_turma": {
+        "3emA": "Vlad",
+        "1emA": "Zabuor",
+        "3emB": "Zabuor"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF"
+    },
+    {
+      "nome": "Química",
+      "carga_semanal": 2,
+      "tipo": "pesada",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA",
+        "3emB",
+        "9anoA",
+        "9anoB"
+      ],
+      "carga_por_turma": {
+        "1emB": 2,
+        "2emB": 2,
+        "9anoB": 2,
+        "3emA": 2,
+        "9anoA": 2,
+        "1emA": 2,
+        "2emA": 2,
+        "3emB": 2
+      },
+      "professor_por_turma": {
+        "1emB": "Vlad",
+        "2emB": "Vlad",
+        "9anoB": "Vlad",
+        "3emA": "Vlad",
+        "9anoA": "Zabuor",
+        "1emA": "Zabuor",
+        "2emA": "Zabuor",
+        "3emB": "Zabuor"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "25004783-645e-4d16-81d2-866c19c1c896"
+    },
+    {
+      "nome": "Redação",
+      "carga_semanal": 1,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA",
+        "3emB"
+      ],
+      "carga_por_turma": {
+        "1emA": 1,
+        "1emB": 1,
+        "2emB": 1,
+        "3emB": 1,
+        "3emA": 1,
+        "2emA": 1
+      },
+      "professor_por_turma": {
+        "1emA": "Heliana",
+        "1emB": "Loide",
+        "2emB": "Loide",
+        "3emB": "Loide",
+        "3emA": "Loide",
+        "2emA": "Loide"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF"
+    },
+    {
+      "nome": "Sociologia",
+      "carga_semanal": 1,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "1emB",
+        "2emA",
+        "2emB",
+        "3emA",
+        "3emB"
+      ],
+      "carga_por_turma": {
+        "1emB": 1,
+        "2emB": 1,
+        "3emB": 1,
+        "1emA": 1,
+        "2emA": 1,
+        "3emA": 1
+      },
+      "professor_por_turma": {
+        "1emB": "Anna",
+        "2emB": "Anna",
+        "3emB": "Anna",
+        "1emA": "Anna",
+        "2emA": "Anna",
+        "3emA": "Anna"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF",
+      "id": "4f58afff-a0d0-49af-ab2a-93bc2828b812"
+    },
+    {
+      "nome": "Tecnologia e Saúde",
+      "carga_semanal": 1,
+      "tipo": "media",
+      "turmas": [
+        "1emA",
+        "2emA"
+      ],
+      "carga_por_turma": {
+        "1emA": 1,
+        "2emA": 1
+      },
+      "professor_por_turma": {
+        "1emA": "Zabuor",
+        "2emA": "Zabuor"
+      },
+      "cor_fundo": "#4A90E2",
+      "cor_fonte": "#FFFFFF"
+    }
+  ],
+  "turmas": [
+    {
+      "nome": "6anoA",
+      "serie": "6ano",
+      "turno": "manha",
+      "segmento": "EF_II",
+      "id": "0b6f32f2-4be3-4365-b6ad-4450b2d0f5ce"
+    },
+    {
+      "nome": "7anoA",
+      "serie": "7ano",
+      "turno": "manha",
+      "segmento": "EF_II",
+      "id": "9a2d1042-a0bc-46b8-82be-d851f2c7cc45"
+    },
+    {
+      "nome": "8anoA",
+      "serie": "8ano",
+      "turno": "manha",
+      "segmento": "EF_II",
+      "id": "13ffe254-e4a1-4cab-868c-fde7060a8732"
+    },
+    {
+      "nome": "9anoA",
+      "serie": "9ano",
+      "turno": "manha",
+      "segmento": "EF_II",
+      "id": "7acc4457-82b2-4696-8d5f-91cee713cf08"
+    },
+    {
+      "nome": "1emA",
+      "serie": "1em",
+      "turno": "manha",
+      "segmento": "EM",
+      "id": "6f551ad2-5eef-4539-b404-b7235e892fa3"
+    },
+    {
+      "nome": "2emA",
+      "serie": "2em",
+      "turno": "manha",
+      "segmento": "EM",
+      "id": "acc49502-fb25-4639-88ef-7b128e89e41a"
+    },
+    {
+      "nome": "3emA",
+      "serie": "3em",
+      "turno": "manha",
+      "segmento": "EM",
+      "id": "a10dd06b-9acd-4bf1-87ce-bdb2a108cb16"
+    },
+    {
+      "nome": "6anoB",
+      "serie": "6ano",
+      "turno": "manha",
+      "segmento": "EF_II",
+      "id": "e125507d-9647-4ef6-983f-cd2b6a284a5a"
+    },
+    {
+      "nome": "7anoB",
+      "serie": "7ano",
+      "turno": "manha",
+      "segmento": "EF_II",
+      "id": "ab88ebdb-ccc4-4e21-a8d3-26e5ac7e141f"
+    },
+    {
+      "nome": "8anoB",
+      "serie": "8ano",
+      "turno": "manha",
+      "segmento": "EF_II",
+      "id": "b6b7126a-d5ce-4ac6-a284-dfa24b776940"
+    },
+    {
+      "nome": "9anoB",
+      "serie": "9ano",
+      "turno": "manha",
+      "segmento": "EF_II",
+      "id": "2ce64a05-95e1-4aa8-b3f0-7ec51358b5f0"
+    },
+    {
+      "nome": "1emB",
+      "serie": "1em",
+      "turno": "manha",
+      "segmento": "EM",
+      "id": "f27ec015-0a3d-497a-a011-9712514723c7"
+    },
+    {
+      "nome": "2emB",
+      "serie": "2em",
+      "turno": "manha",
+      "segmento": "EM",
+      "id": "a039a493-d64a-4df0-b434-c4525f900a7e"
+    },
+    {
+      "nome": "3emB",
+      "serie": "3em",
+      "turno": "manha",
+      "segmento": "EM",
+      "id": "75e8840b-d36d-43c6-8b0e-bd35cdba85bd"
+    }
+  ],
+  "salas": [
+    {
+      "nome": "Sala 1",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "36d9155e-e840-485b-b686-bd87079c04b5"
+    },
+    {
+      "nome": "Sala 2",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "ff820972-7c77-4513-a6a5-87521822160e"
+    },
+    {
+      "nome": "Sala 3",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "24174994-a1dc-4f5c-8d8a-12bb6016f602"
+    },
+    {
+      "nome": "Sala 4",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "73226015-a83c-48f9-9198-aad80f22f800"
+    },
+    {
+      "nome": "Sala 5",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "30b540a0-c188-4f63-9db9-3d896dc7567c"
+    },
+    {
+      "nome": "Sala 6",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "6030529e-7165-468f-9329-77e7c09f5900"
+    },
+    {
+      "nome": "Sala 7",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "bcbb5daa-9bd0-45fa-9eb8-aff3016a795f"
+    },
+    {
+      "nome": "Sala 8",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "6bea96df-ef09-4207-a7a3-45c02bdf9c9b"
+    },
+    {
+      "nome": "Sala 9",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "38d7b38e-3209-4a99-a96e-0d7d2601522e"
+    },
+    {
+      "nome": "Sala 10",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "e33fc80f-8232-4a58-8391-640aae23bcac"
+    },
+    {
+      "nome": "Sala 11",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "dbcd63ff-44e3-465a-96a1-8b6e3b48c098"
+    },
+    {
+      "nome": "Sala 12",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "51fd9249-64cb-4699-82fe-51ced34a4af5"
+    },
+    {
+      "nome": "Sala 13",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "ef958022-6adf-45f0-aa23-7dc10c1a3b86"
+    },
+    {
+      "nome": "Sala 14",
+      "capacidade": 30,
+      "tipo": "normal",
+      "id": "222dbc15-1b18-4381-ae0e-236687f8386c"
+    },
+    {
+      "nome": "Laboratório de Ciências",
+      "capacidade": 25,
+      "tipo": "laboratório",
+      "id": "cf19af9b-520b-42e5-bfba-a4a2d6c24717"
+    },
+    {
+      "nome": "Auditório",
+      "capacidade": 100,
+      "tipo": "auditório",
+      "id": "e3f3dc10-fba1-41c6-8cc1-4d0060b3c781"
+    }
+  ],
+  "aulas": [
+    {
+      "turma": "1emA",
+      "disciplina": "Geografia",
+      "professor": "Rene",
+      "dia": "segunda",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Biologia",
+      "professor": "Marina",
+      "dia": "segunda",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Português",
+      "professor": "Heliana",
+      "dia": "segunda",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Informática",
+      "professor": "Matheus",
+      "dia": "segunda",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Análises Historiográficas",
+      "professor": "Zabuor",
+      "dia": "segunda",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Sociologia",
+      "professor": "Anna Maria",
+      "dia": "segunda",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Física",
+      "professor": "Matheus",
+      "dia": "segunda",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Filosofia",
+      "professor": "Anna Maria",
+      "dia": "terca",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Inglês",
+      "professor": "Malu",
+      "dia": "terca",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Educação Física",
+      "professor": "Marcão",
+      "dia": "terca",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Análises Historiográficas",
+      "professor": "Zabuor",
+      "dia": "terca",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Inglês",
+      "professor": "Malu",
+      "dia": "terca",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Química",
+      "professor": "Zabuor",
+      "dia": "terca",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Física",
+      "professor": "Matheus",
+      "dia": "terca",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Biologia",
+      "professor": "Marina",
+      "dia": "quarta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Química",
+      "professor": "Vlad",
+      "dia": "quarta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Português",
+      "professor": "Heliana",
+      "dia": "quarta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Arte",
+      "professor": "Vanessa",
+      "dia": "quarta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "quarta",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "quarta",
+      "horario": 6,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "História",
+      "professor": "Waldemar",
+      "dia": "quarta",
+      "horario": 7,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "quinta",
+      "horario": 1,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Matemática",
+      "professor": "Santiago",
+      "dia": "quinta",
+      "horario": 2,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Arte",
+      "professor": "Vanessa",
+      "dia": "quinta",
+      "horario": 3,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Física",
+      "professor": "Matheus",
+      "dia": "quinta",
+      "horario": 4,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Geografia",
+      "professor": "Rene",
+      "dia": "quinta",
+      "horario": 5,
+      "segmento": "EM"
+    },
+    {
+      "turma": "1emA",
+      "disciplina": "Português",
+      "professor": "Heliana",
+      "dia": "quinta",
+      "horario": 6,
+      "segmento": "EM"
+    }
+  ],
+  "feriados": [],
+  "periodos": []
+}
