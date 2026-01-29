@@ -153,6 +153,10 @@ def carregar_turmas():
     
     for item in turmas:
         if isinstance(item, dict):
+            # Remover campo 'grupo' se existir (DEPRECATED)
+            if 'grupo' in item:
+                del item['grupo']
+            
             resultado.append(Turma(**item))
         elif hasattr(item, 'nome') and hasattr(item, 'serie'):
             resultado.append(item)
@@ -168,6 +172,10 @@ def carregar_professores():
     
     for item in professores:
         if isinstance(item, dict):
+            # Remover campo 'grupo' se existir (DEPRECATED)
+            if 'grupo' in item:
+                del item['grupo']
+            
             # Converter disponibilidade conforme o tipo no banco
             if 'disponibilidade' in item:
                 disp = item['disponibilidade']
@@ -199,6 +207,10 @@ def carregar_disciplinas():
     
     for item in disciplinas:
         if isinstance(item, dict):
+            # Remover campo 'grupo' se existir (DEPRECATED)
+            if 'grupo' in item:
+                del item['grupo']
+            
             # Compatibilidade: renomear carga_turmas para carga_por_turma
             if 'carga_turmas' in item:
                 item['carga_por_turma'] = item.pop('carga_turmas')

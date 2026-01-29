@@ -1,178 +1,129 @@
-#!/usr/bin/env python3
-"""
-Análise completa: PDF vs Banco
-Verifica TODAS as atribuições (professor + turma + disciplina + carga)
-"""
-
 import json
 from collections import defaultdict
 
-# Carregar dados extraídos do PDF
-try:
-    with open('atribuicoes_extraidas_corrigidas.json', 'r', encoding='utf-8') as f:
-        pdf_data = json.load(f)
-except:
-    print("❌ Arquivo atribuicoes_extraidas_corrigidas.json não encontrado")
-    print("   Executar: python corrigir_nomes_disciplinas.py")
-    exit(1)
-
 # Carregar banco
-with open('escola_database.json', 'r', encoding='utf-8') as f:
-    banco = json.load(f)
+with open('escola_database.json', encoding='utf-8') as f:
+    data = json.load(f)
 
-print("=" * 120)
-print("📊 ANÁLISE COMPLETA: PDF vs BANCO")
-print("=" * 120)
-print()
+print("=" * 80)
+print("ANÁLISE DETALHADA: 1emB e 2emB")
+print("=" * 80)
 
-# Organizar dados do PDF por turma
-pdf_por_turma = defaultdict(list)
-for atrib in pdf_data:
-    turma = atrib['turma']
-    pdf_por_turma[turma].append({
-        'disciplina': atrib['disciplina'],
-        'carga': atrib['carga']
-    })
-
-# Organizar dados do BANCO por turma
-banco_por_turma = defaultdict(list)
-for disc in banco['disciplinas']:
-    carga_por_turma = disc.get('carga_por_turma', {})
-    prof_por_turma = disc.get('professor_por_turma', {})
+for turma_alvo in ['1emB', '2emB', '1emA', '3emB']:
+    print(f"\n{'='*80}")
+    print(f"📚 TURMA: {turma_alvo}")
+    print('='*80)
     
-    for turma, carga in carga_por_turma.items():
-        professor = prof_por_turma.get(turma, '❌ SEM PROFESSOR')
-        banco_por_turma[turma].append({
-            'disciplina': disc['nome'],
-            'carga': carga,
-            'professor': professor
-        })
-
-# Comparar turma por turma
-turmas = sorted(set(list(pdf_por_turma.keys()) + list(banco_por_turma.keys())))
-
-problemas_gerais = {
-    'turmas_com_falta': [],
-    'turmas_com_excesso': [],
-    'disciplinas_sem_professor': [],
-    'disciplinas_faltando': [],
-    'cargas_diferentes': []
-}
-
-for turma in turmas:
-    pdf_turma = pdf_por_turma.get(turma, [])
-    banco_turma = banco_por_turma.get(turma, [])
+    disciplinas_turma = []
+    total = 0
     
-    # Calcular cargas totais
-    carga_pdf = sum(d['carga'] for d in pdf_turma)
-    carga_banco = sum(d['carga'] for d in banco_turma)
+    for disc in data['disciplinas']:
+        if turma_alvo in disc.get('turmas', []):
+            # Verificar carga específica ou usar padrão
+            carga_por_turma = disc.get('carga_por_turma', {})
+            if carga_por_turma and turma_alvo in carga_por_turma:
+                carga = carga_por_turma[turma_alvo]
+            else:
+                carga = disc.get('carga_semanal', 0)
+            
+            disciplinas_turma.append({
+                'nome': disc['nome'],
+                'carga': carga
+            })
+            total += carga
     
-    print(f"\n{'='*120}")
-    print(f"📚 TURMA: {turma}")
-    print(f"{'='*120}")
+    # Ordenar por carga (decrescente)
+    disciplinas_turma.sort(key=lambda x: x['carga'], reverse=True)
     
-    # Status da carga
-    if carga_pdf == carga_banco:
-        status = "✅"
-    elif carga_banco < carga_pdf:
-        status = "⚠️ FALTA"
-        problemas_gerais['turmas_com_falta'].append(turma)
+    print(f"\nDisciplinas ({len(disciplinas_turma)}):\n")
+    for disc in disciplinas_turma:
+        print(f"  {disc['carga']}h - {disc['nome']}")
+    
+    limite = 35
+    print(f"\n{'─'*80}")
+    print(f"TOTAL: {total}h / {limite}h", end="")
+    
+    diferenca = total - limite
+    if diferenca > 0:
+        print(f" ❌ EXCESSO: +{diferenca}h")
+        print(f"\n💡 SUGESTÃO: Remover {diferenca}h")
+    elif diferenca < 0:
+        print(f" ⚠️  FALTA: {abs(diferenca)}h")
+        print(f"\n💡 SUGESTÃO: Adicionar {abs(diferenca)}h")
     else:
-        status = "⚠️ EXCESSO"
-        problemas_gerais['turmas_com_excesso'].append(turma)
+        print(f" ✅ PERFEITO!")
+
+print("\n" + "=" * 80)
+print("COMPARAÇÃO: O QUE MUDAR PARA IGUALAR 1emB/2emB com 1emA/3emB")
+print("=" * 80)
+
+# Comparar disciplinas
+disciplinas_1emA = {}
+disciplinas_1emB = {}
+disciplinas_2emB = {}
+disciplinas_3emB = {}
+
+for disc in data['disciplinas']:
+    nome = disc['nome']
+    carga_por_turma = disc.get('carga_por_turma', {})
+    carga_semanal = disc.get('carga_semanal', 0)
     
-    print(f"{status} PDF: {carga_pdf}h | Banco: {carga_banco}h | Diferença: {carga_banco - carga_pdf:+d}h")
-    print()
+    if '1emA' in disc.get('turmas', []):
+        carga = carga_por_turma.get('1emA', carga_semanal)
+        disciplinas_1emA[nome] = carga
     
-    # Criar dicionários de disciplinas
-    pdf_dict = {d['disciplina']: d['carga'] for d in pdf_turma}
-    banco_dict = {d['disciplina']: (d['carga'], d['professor']) for d in banco_turma}
+    if '1emB' in disc.get('turmas', []):
+        carga = carga_por_turma.get('1emB', carga_semanal)
+        disciplinas_1emB[nome] = carga
     
-    todas_disciplinas = sorted(set(list(pdf_dict.keys()) + list(banco_dict.keys())))
+    if '2emB' in disc.get('turmas', []):
+        carga = carga_por_turma.get('2emB', carga_semanal)
+        disciplinas_2emB[nome] = carga
     
-    # Tabela de comparação
-    print(f"{'Disciplina':<35} | {'PDF':<6} | {'Banco':<6} | {'Professor':<20} | Status")
-    print("-" * 120)
-    
-    for disc in todas_disciplinas:
-        carga_pdf_disc = pdf_dict.get(disc, 0)
-        banco_info = banco_dict.get(disc, (0, ''))
-        carga_banco_disc = banco_info[0]
-        professor = banco_info[1] if len(banco_info) > 1 else ''
-        
-        # Status
-        if disc not in pdf_dict:
-            status = "⚠️ EXTRA no banco"
-        elif disc not in banco_dict:
-            status = "❌ FALTANDO no banco"
-            problemas_gerais['disciplinas_faltando'].append(f"{turma} - {disc}")
-        elif carga_pdf_disc != carga_banco_disc:
-            status = f"⚠️ Carga diferente ({carga_banco_disc - carga_pdf_disc:+d}h)"
-            problemas_gerais['cargas_diferentes'].append(f"{turma} - {disc}")
-        elif not professor or professor == '❌ SEM PROFESSOR':
-            status = "❌ SEM PROFESSOR"
-            problemas_gerais['disciplinas_sem_professor'].append(f"{turma} - {disc}")
-        else:
-            status = "✅ OK"
-        
-        print(f"{disc:<35} | {carga_pdf_disc:>4}h | {carga_banco_disc:>4}h | {professor:<20} | {status}")
+    if '3emB' in disc.get('turmas', []):
+        carga = carga_por_turma.get('3emB', carga_semanal)
+        disciplinas_3emB[nome] = carga
 
-print()
-print()
-print("=" * 120)
-print("📋 RESUMO DOS PROBLEMAS")
-print("=" * 120)
-print()
+print("\n🔍 Diferenças entre 1emA (34h ✅) e 1emB (37h ❌):\n")
+todas_disciplinas = set(disciplinas_1emA.keys()) | set(disciplinas_1emB.keys())
+diferencas = []
 
-if problemas_gerais['turmas_com_falta']:
-    print(f"⚠️ TURMAS COM FALTA DE CARGA ({len(problemas_gerais['turmas_com_falta'])}):")
-    for turma in problemas_gerais['turmas_com_falta']:
-        print(f"   • {turma}")
-    print()
+for disc in sorted(todas_disciplinas):
+    carga_A = disciplinas_1emA.get(disc, 0)
+    carga_B = disciplinas_1emB.get(disc, 0)
+    if carga_A != carga_B:
+        dif = carga_B - carga_A
+        diferencas.append((disc, carga_A, carga_B, dif))
+        print(f"  • {disc}: 1emA={carga_A}h vs 1emB={carga_B}h ({dif:+d}h)")
 
-if problemas_gerais['turmas_com_excesso']:
-    print(f"⚠️ TURMAS COM EXCESSO DE CARGA ({len(problemas_gerais['turmas_com_excesso'])}):")
-    for turma in problemas_gerais['turmas_com_excesso']:
-        print(f"   • {turma}")
-    print()
+if not diferencas:
+    print("  ✅ Nenhuma diferença encontrada")
 
-if problemas_gerais['disciplinas_faltando']:
-    print(f"❌ DISCIPLINAS FALTANDO NO BANCO ({len(problemas_gerais['disciplinas_faltando'])}):")
-    for item in problemas_gerais['disciplinas_faltando'][:20]:  # Mostrar apenas as primeiras 20
-        print(f"   • {item}")
-    if len(problemas_gerais['disciplinas_faltando']) > 20:
-        print(f"   ... e mais {len(problemas_gerais['disciplinas_faltando']) - 20}")
-    print()
+print("\n🔍 Diferenças entre 1emA (34h ✅) e 2emB (37h ❌):\n")
+todas_disciplinas = set(disciplinas_1emA.keys()) | set(disciplinas_2emB.keys())
+diferencas = []
 
-if problemas_gerais['disciplinas_sem_professor']:
-    print(f"❌ DISCIPLINAS SEM PROFESSOR ({len(problemas_gerais['disciplinas_sem_professor'])}):")
-    for item in problemas_gerais['disciplinas_sem_professor'][:20]:
-        print(f"   • {item}")
-    if len(problemas_gerais['disciplinas_sem_professor']) > 20:
-        print(f"   ... e mais {len(problemas_gerais['disciplinas_sem_professor']) - 20}")
-    print()
+for disc in sorted(todas_disciplinas):
+    carga_A = disciplinas_1emA.get(disc, 0)
+    carga_B = disciplinas_2emB.get(disc, 0)
+    if carga_A != carga_B:
+        dif = carga_B - carga_A
+        diferencas.append((disc, carga_A, carga_B, dif))
+        print(f"  • {disc}: 1emA={carga_A}h vs 2emB={carga_B}h ({dif:+d}h)")
 
-if problemas_gerais['cargas_diferentes']:
-    print(f"⚠️ CARGAS DIFERENTES ({len(problemas_gerais['cargas_diferentes'])}):")
-    for item in problemas_gerais['cargas_diferentes'][:20]:
-        print(f"   • {item}")
-    if len(problemas_gerais['cargas_diferentes']) > 20:
-        print(f"   ... e mais {len(problemas_gerais['cargas_diferentes']) - 20}")
-    print()
+if not diferencas:
+    print("  ✅ Nenhuma diferença encontrada")
 
-print()
-print("=" * 120)
-print("🎯 PRÓXIMAS AÇÕES RECOMENDADAS:")
-print("=" * 120)
-print()
+print("\n" + "=" * 80)
+print("✂️  OPÇÕES DE CORTE PARA 1emB e 2emB (remover 2h):")
+print("=" * 80)
 
-if problemas_gerais['disciplinas_faltando']:
-    print("1. Adicionar disciplinas faltantes no banco")
-if problemas_gerais['disciplinas_sem_professor']:
-    print("2. Atribuir professores às disciplinas sem professor")
-if problemas_gerais['cargas_diferentes']:
-    print("3. Corrigir cargas horárias diferentes")
-if problemas_gerais['turmas_com_falta'] or problemas_gerais['turmas_com_excesso']:
-    print("4. Revisar cargas totais das turmas")
+print("\nOpção 1 - Cortar 2h de UMA disciplina:")
+for disc in disciplinas_1emB:
+    if disciplinas_1emB[disc] >= 3:
+        print(f"  • {disc}: {disciplinas_1emB[disc]}h → {disciplinas_1emB[disc]-2}h")
 
-print()
+print("\nOpção 2 - Cortar 1h de DUAS disciplinas:")
+for disc in disciplinas_1emB:
+    if disciplinas_1emB[disc] >= 2:
+        print(f"  • {disc}: {disciplinas_1emB[disc]}h → {disciplinas_1emB[disc]-1}h")
